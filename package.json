@@ -1,0 +1,26 @@
+json
+
+
+{
+  "name": "hivegrid-energy-os",
+  "version": "1.0.0",
+  "description": "HiveGrid Energy OS - Distributed VPP Platform",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "14.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.4.0",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32"
+  },
+  "devDependencies": {
+    "eslint": "^8.54.0",
+    "eslint-config-next": "^14.2.0"
+  }
+}
