@@ -93,6 +93,14 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Teaser Section */}
+      <section className="max-w-5xl mx-auto mt-32 px-6 text-center">
+        <h3 className="text-3xl font-bold mb-4">The Distributed Future is Here</h3>
+        <p className="text-hive-slate max-w-2xl mx-auto">
+          HiveGrid Energy OS turns every home into a smart power node — combining battery storage, grid services, and future AI compute into one seamless platform.
+        </p>
+      </section>
+
       <footer className="mt-32 border-t border-hive-border py-12 text-center text-sm text-hive-slate">
         © 2026 HiveGrid Energy LLC • Building the Distributed Future of Texas Energy
       </footer>
