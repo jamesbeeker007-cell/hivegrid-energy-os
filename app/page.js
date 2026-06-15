@@ -75,7 +75,74 @@ export default function HomePage() {
         </form>
       </section>
 
-      {/* More sections can go here — About, How It Works, Platform, etc. */}
+      {/* About */}
+      <section id="about" className="max-w-5xl mx-auto mt-32 px-6">
+        <h3 className="text-4xl font-bold text-center mb-12">The Distributed Future is Here</h3>
+        <p className="text-xl text-hive-slate max-w-3xl mx-auto text-center leading-relaxed">
+          HiveGrid Energy OS turns every home into a smart power node — combining battery storage, grid services, and future AI compute into one seamless platform. 
+          Instead of building one giant facility, we’re building thousands of intelligent residential nodes.
+        </p>
+      </section>
+
+      {/* How It Works */}
+      <section id="how-it-works" className="max-w-5xl mx-auto mt-32 px-6">
+        <h3 className="text-4xl font-bold text-center mb-12">How It Works</h3>
+        <div className="grid md:grid-cols-3 gap-8">
+          <div className="bg-hive-panel border border-hive-border rounded-3xl p-8">
+            <div className="text-5xl mb-6">1️⃣</div>
+            <h4 className="text-2xl font-bold mb-4">Install</h4>
+            <p className="text-hive-slate">Premium solar + battery systems installed at $0 upfront through our SOLRITE partnership.</p>
+          </div>
+          <div className="bg-hive-panel border border-hive-border rounded-3xl p-8">
+            <div className="text-5xl mb-6">2️⃣</div>
+            <h4 className="text-2xl font-bold mb-4">Optimize</h4>
+            <p className="text-hive-slate">Your home automatically participates in ERCOT markets, earning revenue from volatility.</p>
+          </div>
+          <div className="bg-hive-panel border border-hive-border rounded-3xl p-8">
+            <div className="text-5xl mb-6">3️⃣</div>
+            <h4 className="text-2xl font-bold mb-4">Protect</h4>
+            <p className="text-hive-slate">Reliable backup power during extreme weather — never risk blackouts again.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* HiveGrid OS */}
+      <section id="platform" className="max-w-5xl mx-auto mt-32 px-6 bg-hive-panel/50 rounded-3xl py-16">
+        <h3 className="text-4xl font-bold text-center mb-8">HiveGrid Energy OS</h3>
+        <p className="text-xl text-hive-slate max-w-3xl mx-auto text-center">
+          The operating system for the distributed energy future. Real-time monitoring, automated revenue generation, crew dispatch, and future AI compute integration — all in one platform.
+        </p>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="max-w-5xl mx-auto mt-32 px-6 text-center">
+        <h3 className="text-4xl font-bold mb-6">Ready to Power the Future?</h3>
+        <p className="text-hive-slate mb-10">For accredited investors and strategic partners.</p>
+        
+        <form onSubmit={handleSubmit} className="max-w-md mx-auto flex gap-3">
+          {!submitted ? (
+            <>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email"
+                className="flex-1 bg-hive-panel border border-hive-border rounded-2xl px-6 py-4 focus:outline-none focus:border-hive-cyan"
+              />
+              <button
+                type="submit"
+                className="bg-hive-cyan hover:bg-cyan-400 transition-colors text-black font-bold px-10 py-4 rounded-2xl whitespace-nowrap"
+              >
+                Contact Us
+              </button>
+            </>
+          ) : (
+            <div className="w-full py-6 text-center text-hive-cyan font-medium">
+              ✓ Thank you. We’ll be in touch shortly.
+            </div>
+          )}
+        </form>
+      </section>
 
       <footer className="mt-32 border-t border-hive-border py-12 text-center text-sm text-hive-slate">
         © 2026 HiveGrid Energy LLC • Building the Distributed Future of Texas Energy
