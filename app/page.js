@@ -12,8 +12,8 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen bg-hive-base text-white">
-      {/* Header */}
-      <header className="w-full bg-hive-panel/90 backdrop-blur-md border-b border-hive-border sticky top-0 z-50 px-6 py-5 flex justify-between items-center">
+      {/* Navigation */}
+      <nav className="w-full bg-hive-panel/90 backdrop-blur-md border-b border-hive-border sticky top-0 z-50 px-6 py-5 flex justify-between items-center">
         <div className="flex items-center gap-3">
           <div className="h-9 w-9 bg-gradient-to-br from-hive-cyan to-hive-amber rounded-xl flex items-center justify-center font-bold text-xl shadow-lg">
             ⬡
@@ -23,10 +23,14 @@ export default function HomePage() {
             <p className="text-xs text-hive-cyan -mt-1">ENERGY OS</p>
           </div>
         </div>
-        <div className="text-xs font-mono bg-black/50 px-4 py-2 rounded-full border border-hive-cyan/30">
-          ERCOT Fleet: <span className="text-hive-cyan font-bold">4,812 Nodes Online</span>
+        
+        <div className="flex items-center gap-8 text-sm font-medium">
+          <a href="#about" className="hover:text-hive-cyan transition-colors">About</a>
+          <a href="#how-it-works" className="hover:text-hive-cyan transition-colors">How It Works</a>
+          <a href="#platform" className="hover:text-hive-cyan transition-colors">HiveGrid OS</a>
+          <a href="#contact" className="hover:text-hive-cyan transition-colors">Contact</a>
         </div>
-      </header>
+      </nav>
 
       {/* Hero */}
       <section className="max-w-5xl mx-auto text-center pt-20 px-6">
@@ -51,7 +55,6 @@ export default function HomePage() {
             <>
               <input
                 type="email"
-                required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
@@ -72,34 +75,7 @@ export default function HomePage() {
         </form>
       </section>
 
-      {/* Value Props */}
-      <section className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 mt-24 px-6">
-        <div className="bg-hive-panel border border-hive-border rounded-3xl p-8">
-          <div className="text-4xl mb-6">💰</div>
-          <h3 className="text-2xl font-bold mb-3">Zero Capital Upfront</h3>
-          <p className="text-hive-slate">Premium battery systems installed at $0 out-of-pocket through our SOLRITE partnership. Hardware costs cleared via grid integration yields.</p>
-        </div>
-
-        <div className="bg-hive-panel border border-hive-border rounded-3xl p-8">
-          <div className="text-4xl mb-6">🛡️</div>
-          <h3 className="text-2xl font-bold mb-3">The Outage Shield</h3>
-          <p className="text-hive-slate">Guaranteed backup power during extreme Texas weather. Never risk blackouts again.</p>
-        </div>
-
-        <div className="bg-hive-panel border border-hive-border rounded-3xl p-8">
-          <div className="text-4xl mb-6">📈</div>
-          <h3 className="text-2xl font-bold mb-3">Automated Revenue</h3>
-          <p className="text-hive-slate">Your home earns from ERCOT’s extreme market volatility — completely on autopilot.</p>
-        </div>
-      </section>
-
-      {/* Teaser Section */}
-      <section className="max-w-5xl mx-auto mt-32 px-6 text-center">
-        <h3 className="text-3xl font-bold mb-4">The Distributed Future is Here</h3>
-        <p className="text-hive-slate max-w-2xl mx-auto">
-          HiveGrid Energy OS turns every home into a smart power node — combining battery storage, grid services, and future AI compute into one seamless platform.
-        </p>
-      </section>
+      {/* More sections can go here — About, How It Works, Platform, etc. */}
 
       <footer className="mt-32 border-t border-hive-border py-12 text-center text-sm text-hive-slate">
         © 2026 HiveGrid Energy LLC • Building the Distributed Future of Texas Energy
