@@ -43,7 +43,7 @@ export default function HomePage() {
 
         <p className="mt-6 text-2xl text-hive-slate max-w-2xl mx-auto">
           Premium solar + battery systems at <span className="text-hive-amber font-semibold">$0 Upfront Cost</span>.<br />
-          Automatically generating revenue from ERCOT volatility.
+          Automatically generating revenue from ERCOT volatility while providing backup power.
         </p>
 
         <form onSubmit={handleSubmit} className="mt-10 max-w-md mx-auto flex gap-3">
@@ -77,13 +77,13 @@ export default function HomePage() {
         <div className="bg-hive-panel border border-hive-border rounded-3xl p-8">
           <div className="text-4xl mb-6">💰</div>
           <h3 className="text-2xl font-bold mb-3">Zero Capital Upfront</h3>
-          <p className="text-hive-slate">Premium battery systems installed at $0 out-of-pocket. Hardware costs cleared through grid integration yields.</p>
+          <p className="text-hive-slate">Premium battery systems installed at $0 out-of-pocket through our SOLRITE partnership. Hardware costs cleared via grid integration yields.</p>
         </div>
 
         <div className="bg-hive-panel border border-hive-border rounded-3xl p-8">
           <div className="text-4xl mb-6">🛡️</div>
           <h3 className="text-2xl font-bold mb-3">The Outage Shield</h3>
-          <p className="text-hive-slate">Guaranteed backup power during extreme weather. Never risk blackouts again.</p>
+          <p className="text-hive-slate">Guaranteed backup power during extreme Texas weather. Never risk blackouts again.</p>
         </div>
 
         <div className="bg-hive-panel border border-hive-border rounded-3xl p-8">
@@ -94,7 +94,7 @@ export default function HomePage() {
       </section>
 
       <footer className="mt-32 border-t border-hive-border py-12 text-center text-sm text-hive-slate">
-        © 2026 HiveGrid Energy LLC • Building the Distributed Future
+        © 2026 HiveGrid Energy LLC • Building the Distributed Future of Texas Energy
       </footer>
     </main>
   )
