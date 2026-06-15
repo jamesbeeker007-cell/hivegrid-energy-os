@@ -75,12 +75,12 @@ export default function HomePage() {
         </form>
       </section>
 
-      {/* About */}
-      <section id="about" className="max-w-5xl mx-auto mt-32 px-6">
-        <h3 className="text-4xl font-bold text-center mb-12">The Distributed Future is Here</h3>
-        <p className="text-xl text-hive-slate max-w-3xl mx-auto text-center leading-relaxed">
-          HiveGrid Energy OS turns every home into a smart power node — combining battery storage, grid services, and future AI compute into one seamless platform. 
-          Instead of building one giant facility, we’re building thousands of intelligent residential nodes.
+      {/* About / Distributed Future */}
+      <section id="about" className="max-w-5xl mx-auto mt-32 px-6 text-center">
+        <h3 className="text-4xl font-bold mb-8">The Distributed Future is Here</h3>
+        <p className="text-xl text-hive-slate max-w-3xl mx-auto leading-relaxed">
+          Instead of one giant facility, HiveGrid is building thousands of intelligent residential nodes. 
+          Every home becomes a smart power plant — combining battery storage, grid services, and future AI compute into one seamless platform.
         </p>
       </section>
 
@@ -89,28 +89,28 @@ export default function HomePage() {
         <h3 className="text-4xl font-bold text-center mb-12">How It Works</h3>
         <div className="grid md:grid-cols-3 gap-8">
           <div className="bg-hive-panel border border-hive-border rounded-3xl p-8">
-            <div className="text-5xl mb-6">1️⃣</div>
+            <div className="text-5xl mb-6 text-hive-cyan">1</div>
             <h4 className="text-2xl font-bold mb-4">Install</h4>
             <p className="text-hive-slate">Premium solar + battery systems installed at $0 upfront through our SOLRITE partnership.</p>
           </div>
           <div className="bg-hive-panel border border-hive-border rounded-3xl p-8">
-            <div className="text-5xl mb-6">2️⃣</div>
+            <div className="text-5xl mb-6 text-hive-cyan">2</div>
             <h4 className="text-2xl font-bold mb-4">Optimize</h4>
             <p className="text-hive-slate">Your home automatically participates in ERCOT markets, earning revenue from volatility.</p>
           </div>
           <div className="bg-hive-panel border border-hive-border rounded-3xl p-8">
-            <div className="text-5xl mb-6">3️⃣</div>
+            <div className="text-5xl mb-6 text-hive-cyan">3</div>
             <h4 className="text-2xl font-bold mb-4">Protect</h4>
-            <p className="text-hive-slate">Reliable backup power during extreme weather — never risk blackouts again.</p>
+            <p className="text-hive-slate">Reliable backup power during extreme Texas weather. Never risk blackouts again.</p>
           </div>
         </div>
       </section>
 
-      {/* HiveGrid OS */}
-      <section id="platform" className="max-w-5xl mx-auto mt-32 px-6 bg-hive-panel/50 rounded-3xl py-16">
-        <h3 className="text-4xl font-bold text-center mb-8">HiveGrid Energy OS</h3>
-        <p className="text-xl text-hive-slate max-w-3xl mx-auto text-center">
-          The operating system for the distributed energy future. Real-time monitoring, automated revenue generation, crew dispatch, and future AI compute integration — all in one platform.
+      {/* HiveGrid OS Platform */}
+      <section id="platform" className="max-w-5xl mx-auto mt-32 px-6 bg-hive-panel/50 rounded-3xl py-16 text-center">
+        <h3 className="text-4xl font-bold mb-6">HiveGrid Energy OS</h3>
+        <p className="text-xl text-hive-slate max-w-3xl mx-auto">
+          The operating system for distributed energy. Real-time monitoring, automated revenue generation, crew dispatch, and future AI compute integration — all in one powerful platform.
         </p>
       </section>
 
