@@ -12,12 +12,18 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen bg-[#0F172A] text-circuit-white">
-      {/* Navigation */}
+      {/* Navigation with Improved Logo */}
       <nav className="w-full bg-[#0F172A]/95 backdrop-blur-md border-b border-silver-node/30 sticky top-0 z-50 px-6 py-5 flex justify-between items-center">
         <div className="flex items-center gap-3">
-          <div className="h-10 w-10 bg-gradient-to-br from-electric-amber to-hive-green rounded-2xl flex items-center justify-center font-bold text-2xl shadow-lg">
-            ⬡
+          {/* Enhanced Logo - closer to the 3D glowing style you liked */}
+          <div className="relative h-11 w-11 flex items-center justify-center">
+            <div className="absolute inset-0 bg-gradient-to-br from-electric-amber via-orange-400 to-hive-green rounded-2xl opacity-90"></div>
+            <div className="relative text-3xl font-bold text-white drop-shadow-[0_0_8px_rgba(255,176,32,0.6)]">
+              ⬡
+            </div>
+            <div className="absolute -right-0.5 -top-0.5 text-electric-amber text-xl">⚡</div>
           </div>
+
           <div>
             <h1 className="text-2xl font-bold tracking-tight font-space-grotesk">HiveGrid</h1>
             <p className="text-xs text-electric-amber -mt-1">ENERGY OS</p>
@@ -32,7 +38,7 @@ export default function HomePage() {
         </div>
       </nav>
 
-      {/* Updated Positive Hero */}
+      {/* Hero Section (Positive version) */}
       <section className="min-h-screen bg-[#0F172A] text-circuit-white flex items-center justify-center relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <div className="inline-flex items-center gap-2 bg-electric-amber/10 text-electric-amber px-4 py-1.5 rounded-full text-sm mb-6">
@@ -64,7 +70,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Refined About */}
+      {/* About */}
       <section id="about" className="max-w-5xl mx-auto mt-32 px-6 text-center">
         <h3 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-cyan-400 via-electric-amber to-amber-400 bg-clip-text text-transparent">
           The Distributed Future is Here
@@ -75,7 +81,7 @@ export default function HomePage() {
         </p>
       </section>
 
-      {/* Refined How It Works */}
+      {/* How It Works */}
       <section id="how-it-works" className="max-w-5xl mx-auto mt-32 px-6">
         <h3 className="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 via-electric-amber to-amber-400 bg-clip-text text-transparent">
           How It Works
