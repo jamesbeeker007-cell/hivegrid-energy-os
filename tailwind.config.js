@@ -7,16 +7,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'hive-base': '#0F172A',
-        'hive-panel': '#1E2937',
-        'hive-cyan': '#22D3EE',
-        'hive-teal': '#14B8A6',
-        'hive-emerald': '#34D399',
-        'hive-yellow': '#FACC15',
-        'hive-amber': '#F59E0B',
-        'hive-orange': '#FB923C',
-        'hive-slate': '#94A3B8',
-      },     fontFamily: {
+        'hive-base': '#0A0F1C',
+        'hive-panel': '#121A2E',
+        'hive-cyan': '#22F0FF',
+        'hive-teal': '#14E8C9',
+        'hive-emerald': '#34F0A6',
+        'hive-yellow': '#F4E05B',
+        'hive-amber': '#FFBB33',
+        'hive-orange': '#FF8A4D',
+        'hive-slate': '#A3BFFA',
+      },
+      fontFamily: {
         'space-grotesk': ['Space Grotesk', 'sans-serif'],
       },
     },
