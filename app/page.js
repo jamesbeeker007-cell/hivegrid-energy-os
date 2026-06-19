@@ -15,10 +15,11 @@ export default function HomePage() {
       {/* Navigation */}
       <nav className="w-full bg-hive-base/95 backdrop-blur-md border-b border-white/10 sticky top-0 z-50 px-6 py-5 flex justify-between items-center">
         <div className="flex items-center gap-3">
+          {/* Improved Logo Placeholder - Replace with your real logo image when ready */}
           <div className="flex items-center gap-3">
-            <div className="h-12 w-12 bg-gradient-to-br from-hive-orange via-hive-amber to-hive-emerald rounded-2xl flex items-center justify-center shadow-2xl relative">
-              <div className="text-white text-4xl font-black tracking-tighter drop-shadow-md">⬡</div>
-              <div className="absolute -right-1.5 -top-1 text-3xl drop-shadow-md">⚡</div>
+            <div className="h-14 w-14 bg-gradient-to-br from-hive-orange via-hive-amber to-hive-emerald rounded-2xl flex items-center justify-center shadow-2xl relative overflow-hidden">
+              <div className="text-white text-5xl font-black tracking-tighter drop-shadow-md">⬡</div>
+              <div className="absolute -right-2 -top-1.5 text-3xl drop-shadow-md">⚡</div>
             </div>
             <div>
               <h1 className="text-3xl font-bold tracking-tighter">HiveGrid</h1>
