@@ -2,15 +2,20 @@
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
-    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       colors: {
-        'hive-green': '#1A3C34',     // Hive Forest Green
-        'electric-amber': '#FFB020', // Electric Amber
-        'circuit-white': '#FFFFFF',
-        'silver-node': '#95A5A6',
+        'hive-base': '#0F172A',
+        'hive-panel': '#1E2937',
+        'hive-cyan': '#22D3EE',
+        'hive-teal': '#14B8A6',
+        'hive-emerald': '#34D399',
+        'hive-yellow': '#FACC15',
+        'hive-amber': '#F59E0B',
+        'hive-orange': '#FB923C',
+        'hive-slate': '#94A3B8',
       },
       fontFamily: {
         'space-grotesk': ['Space Grotesk', 'sans-serif'],
@@ -19,3 +24,5 @@ module.exports = {
   },
   plugins: [],
 }
+
+2. app/page.js (Complete File)
