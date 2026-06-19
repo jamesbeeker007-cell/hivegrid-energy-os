@@ -16,13 +16,10 @@ module.exports = {
         'hive-amber': '#F59E0B',
         'hive-orange': '#FB923C',
         'hive-slate': '#94A3B8',
-      },
-      fontFamily: {
+      },     fontFamily: {
         'space-grotesk': ['Space Grotesk', 'sans-serif'],
       },
     },
   },
   plugins: [],
 }
-
-2. app/page.js (Complete File)
