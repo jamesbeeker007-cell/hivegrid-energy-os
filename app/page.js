@@ -14,20 +14,20 @@ export default function HomePage() {
     <main className="min-h-screen bg-hive-base text-white overflow-hidden">
       {/* Navigation */}
       <nav className="w-full bg-hive-base/95 backdrop-blur-md border-b border-white/10 sticky top-0 z-50 px-6 py-5 flex justify-between items-center">
-        <div className="flex items-center gap-3">
-          {/* Improved Logo Placeholder - Replace with your real logo image when ready */}
-          <div className="flex items-center gap-3">
-            <div className="h-14 w-14 bg-gradient-to-br from-hive-orange via-hive-amber to-hive-emerald rounded-2xl flex items-center justify-center shadow-2xl relative overflow-hidden">
-              <div className="text-white text-5xl font-black tracking-tighter drop-shadow-md">⬡</div>
-              <div className="absolute -right-2 -top-1.5 text-3xl drop-shadow-md">⚡</div>
-            </div>
-            <div>
-              <h1 className="text-3xl font-bold tracking-tighter">HiveGrid</h1>
-              <p className="text-xs text-hive-cyan -mt-1 tracking-[2px]">ENERGY OS</p>
-            </div>
+        <div className="flex items-center gap-4">
+          {/* Logo Placeholder - Replace with your faceted orange/green lightning bolt logo */}
+          <div className="h-14 w-14 bg-gradient-to-br from-hive-orange via-hive-amber to-hive-emerald rounded-2xl flex items-center justify-center shadow-2xl relative overflow-hidden">
+            <div className="text-white text-5xl font-black tracking-tighter drop-shadow-md">⬡</div>
+            <div className="absolute -right-2 -top-1.5 text-3xl drop-shadow-md">⚡</div>
+          </div>
+
+          <div>
+            <h1 className="text-3xl font-bold tracking-tighter">HiveGrid</h1>
+            <p className="text-xs text-hive-cyan -mt-1 tracking-[2px]">ENERGY OS</p>
           </div>
         </div>
 
+        {/* Navigation Links - Solid White */}
         <div className="flex items-center gap-8 text-sm font-medium text-white">
           <a href="#about" className="hover:text-hive-cyan transition-colors">About</a>
           <a href="#how-it-works" className="hover:text-hive-cyan transition-colors">How It Works</a>
@@ -36,16 +36,16 @@ export default function HomePage() {
         </div>
       </nav>
 
-      {/* Hero */}
+      {/* Hero Section */}
       <section className="min-h-[90vh] bg-hive-base flex items-center justify-center relative px-6">
         <div className="max-w-5xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-hive-cyan/10 border border-hive-cyan/30 text-hive-cyan px-6 py-2.5 rounded-full text-sm mb-8 font-medium">
             ⚡ RE-ENGINEERING THE TEXAS RESIDENTIAL GRID
           </div>
 
+          {/* Solid White Headline */}
           <h1 className="text-6xl md:text-7xl font-bold tracking-tighter mb-6 leading-none text-white">
-            Every Home a<br />
-            Power Plant
+            Every Home a<br />Power Plant
           </h1>
 
           <p className="text-2xl md:text-3xl text-white/80 max-w-3xl mx-auto mb-8">
@@ -75,7 +75,7 @@ export default function HomePage() {
           The Distributed Future is Here
         </h3>
         <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-          Instead of one giant facility, HiveGrid is building thousands of intelligent residential nodes. 
+          Instead of one giant facility, HiveGrid is building thousands of intelligent residential nodes.
           Every home becomes a smart power plant — combining battery storage, grid services, and future AI compute into one seamless platform.
         </p>
       </section>
