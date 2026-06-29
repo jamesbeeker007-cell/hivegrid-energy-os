@@ -15,11 +15,12 @@ export default function HomePage() {
       {/* Navigation */}
       <nav className="w-full bg-hive-base/95 backdrop-blur-md border-b border-white/10 sticky top-0 z-50 px-6 py-5 flex justify-between items-center">
         <div className="flex items-center gap-4">
-          {/* Logo Placeholder - Replace with your faceted orange/green lightning bolt logo */}
-          <div className="h-14 w-14 bg-gradient-to-br from-hive-orange via-hive-amber to-hive-emerald rounded-2xl flex items-center justify-center shadow-2xl relative overflow-hidden">
-            <div className="text-white text-5xl font-black tracking-tighter drop-shadow-md">⬡</div>
-            <div className="absolute -right-2 -top-1.5 text-3xl drop-shadow-md">⚡</div>
-          </div>
+          {/* Real Logo from public/images */}
+          <img 
+            src="/images/hivegrid-logo.png" 
+            alt="HiveGrid Energy OS" 
+            className="h-14 w-auto"
+          />
 
           <div>
             <h1 className="text-3xl font-bold tracking-tighter">HiveGrid</h1>
@@ -27,7 +28,6 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Navigation Links - Solid White */}
         <div className="flex items-center gap-8 text-sm font-medium text-white">
           <a href="#about" className="hover:text-hive-cyan transition-colors">About</a>
           <a href="#how-it-works" className="hover:text-hive-cyan transition-colors">How It Works</a>
@@ -36,14 +36,13 @@ export default function HomePage() {
         </div>
       </nav>
 
-      {/* Hero Section */}
+      {/* Hero */}
       <section className="min-h-[90vh] bg-hive-base flex items-center justify-center relative px-6">
         <div className="max-w-5xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-hive-cyan/10 border border-hive-cyan/30 text-hive-cyan px-6 py-2.5 rounded-full text-sm mb-8 font-medium">
             ⚡ RE-ENGINEERING THE TEXAS RESIDENTIAL GRID
           </div>
 
-          {/* Solid White Headline */}
           <h1 className="text-6xl md:text-7xl font-bold tracking-tighter mb-6 leading-none text-white">
             Every Home a<br />Power Plant
           </h1>
