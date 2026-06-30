@@ -15,13 +15,12 @@ export default function HomePage() {
       {/* Navigation */}
       <nav className="w-full bg-hive-base/95 backdrop-blur-md border-b border-white/10 sticky top-0 z-50 px-6 py-5 flex justify-between items-center">
         <div className="flex items-center gap-4">
-          {/* Real Logo from public/images */}
+          {/* Logo - Replace with your actual logo image when ready */}
           <img 
             src="/images/hivegrid-logo.png" 
             alt="HiveGrid Energy OS" 
             className="h-14 w-auto"
           />
-
           <div>
             <h1 className="text-3xl font-bold tracking-tighter">HiveGrid</h1>
             <p className="text-xs text-hive-cyan -mt-1 tracking-[2px]">ENERGY OS</p>
@@ -36,7 +35,7 @@ export default function HomePage() {
         </div>
       </nav>
 
-      {/* Hero */}
+      {/* Hero Section - Option C */}
       <section className="min-h-[90vh] bg-hive-base flex items-center justify-center relative px-6">
         <div className="max-w-5xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-hive-cyan/10 border border-hive-cyan/30 text-hive-cyan px-6 py-2.5 rounded-full text-sm mb-8 font-medium">
@@ -48,11 +47,8 @@ export default function HomePage() {
           </h1>
 
           <p className="text-2xl md:text-3xl text-white/80 max-w-3xl mx-auto mb-8">
-            Premium solar + battery systems at <span className="text-hive-yellow font-semibold">$0 Upfront Cost</span>.
-          </p>
-
-          <p className="text-xl text-white/70 max-w-3xl mx-auto mb-12">
-            Automatically generating revenue from ERCOT volatility while providing reliable backup power.
+            Not one giant plant. Thousands of smart ones.<br />
+            Every home. One grid. Infinite power.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -68,15 +64,26 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* About */}
+      {/* About + Vision */}
       <section id="about" className="max-w-5xl mx-auto mt-24 px-6 text-center">
         <h3 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-hive-cyan via-hive-teal to-hive-yellow bg-clip-text text-transparent">
           The Distributed Future is Here
         </h3>
-        <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed mb-12">
           Instead of one giant facility, HiveGrid is building thousands of intelligent residential nodes.
           Every home becomes a smart power plant — combining battery storage, grid services, and future AI compute into one seamless platform.
         </p>
+
+        {/* Vision Block */}
+        <div className="max-w-3xl mx-auto border border-white/10 rounded-3xl py-10 px-8 bg-hive-panel/50">
+          <h4 className="text-xl font-semibold mb-6 text-hive-cyan">Vision</h4>
+          <div className="space-y-2 text-lg text-white/90">
+            <p>Not one giant plant. Thousands of smart ones.</p>
+            <p>Every home. One grid. Infinite power.</p>
+            <p>The power plant is the neighborhood.</p>
+            <p>Distributed by design. Powerful by nature.</p>
+          </div>
+        </div>
       </section>
 
       {/* How It Works */}
@@ -88,7 +95,7 @@ export default function HomePage() {
           <div className="bg-hive-panel border border-white/10 rounded-3xl p-8 hover:border-hive-cyan/50 transition-colors">
             <div className="text-5xl mb-6 text-hive-cyan">1</div>
             <h4 className="text-2xl font-bold mb-4">Install</h4>
-            <p className="text-white/80">Premium battery systems installed at $0 upfront through our SOLRITE partnership.</p>
+            <p className="text-white/80">Premium battery systems installed at $0 upfront through our strategic partnerships.</p>
           </div>
           <div className="bg-hive-panel border border-white/10 rounded-3xl p-8 hover:border-hive-cyan/50 transition-colors">
             <div className="text-5xl mb-6 text-hive-cyan">2</div>
@@ -103,14 +110,43 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* HiveGrid OS Platform */}
-      <section id="platform" className="max-w-5xl mx-auto mt-24 px-6 bg-hive-panel rounded-3xl py-16 text-center border border-hive-cyan/20">
-        <h3 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-hive-cyan via-hive-teal to-hive-yellow bg-clip-text text-transparent">
-          HiveGrid Energy OS
-        </h3>
-        <p className="text-xl text-white/80 max-w-3xl mx-auto">
-          The operating system for distributed energy. Real-time monitoring, automated revenue generation, crew dispatch, and future AI compute integration — all in one powerful platform.
-        </p>
+      {/* HiveGrid Energy OS - Strengthened */}
+      <section id="platform" className="max-w-5xl mx-auto mt-24 px-6">
+        <div className="text-center mb-12">
+          <h3 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-hive-cyan via-hive-teal to-hive-yellow bg-clip-text text-transparent">
+            HiveGrid Energy OS
+          </h3>
+          <p className="text-xl text-white/80 max-w-3xl mx-auto">
+            The operating system for high-quality, compliant distributed energy deployment.
+          </p>
+        </div>
+
+        <div className="bg-hive-panel border border-white/10 rounded-3xl p-10">
+          <p className="text-lg text-white/80 mb-8 max-w-4xl">
+            HiveGrid Energy OS is our proprietary platform that connects field crews, regulatory compliance, 
+            installation quality, and grid asset activation into one seamless system. It is designed to solve 
+            the biggest operational bottlenecks in residential battery deployment.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="border border-white/10 rounded-2xl p-6">
+              <h5 className="font-semibold text-hive-cyan mb-2">Jurisdictional Compliance Dispatcher</h5>
+              <p className="text-white/80 text-sm">Real-time verification of electrician licenses against state and local requirements before job assignment.</p>
+            </div>
+            <div className="border border-white/10 rounded-2xl p-6">
+              <h5 className="font-semibold text-hive-cyan mb-2">Geofenced Job Dispatch</h5>
+              <p className="text-white/80 text-sm">Dynamic assignment of jobs based on proximity, license validity, and specialization.</p>
+            </div>
+            <div className="border border-white/10 rounded-2xl p-6">
+              <h5 className="font-semibold text-hive-cyan mb-2">AR Install Assist</h5>
+              <p className="text-white/80 text-sm">Augmented reality overlays that guide electricians through code-compliant installations step-by-step.</p>
+            </div>
+            <div className="border border-white/10 rounded-2xl p-6">
+              <h5 className="font-semibold text-hive-cyan mb-2">Automated Verification Loop (“Verify-to-Pay”)</h5>
+              <p className="text-white/80 text-sm">Computer vision quality control that verifies completed work, triggers payment, and activates the asset.</p>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Contact */}
@@ -146,6 +182,7 @@ export default function HomePage() {
       </section>
 
       <footer className="mt-24 border-t border-white/10 py-12 text-center text-sm text-white/60">
+        <div className="mb-2">Trust. Truth. Transparency.</div>
         © 2026 HiveGrid Energy LLC • Building the Distributed Future of Texas Energy
       </footer>
     </main>
