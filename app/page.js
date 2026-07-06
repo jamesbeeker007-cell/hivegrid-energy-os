@@ -15,27 +15,22 @@ export default function HomePage() {
       {/* Navigation */}
       <nav className="w-full bg-hive-base/95 backdrop-blur-md border-b border-white/10 sticky top-0 z-50 px-6 py-5 flex justify-between items-center">
         <div className="flex items-center gap-4">
-          {/* Logo - Replace with your actual logo image when ready */}
-          <img 
-            src="/images/hivegrid-logo.png" 
-            alt="HiveGrid Energy OS" 
-            className="h-14 w-auto"
-          />
+          {/* Logo / Company Name */}
           <div>
             <h1 className="text-3xl font-bold tracking-tighter">HiveGrid</h1>
-            <p className="text-xs text-hive-cyan -mt-1 tracking-[2px]">ENERGY OS</p>
+            <p className="text-xs text-hive-cyan -mt-1 tracking-[2px]">ENERGY</p>
           </div>
         </div>
 
         <div className="flex items-center gap-8 text-sm font-medium text-white">
           <a href="#about" className="hover:text-hive-cyan transition-colors">About</a>
           <a href="#how-it-works" className="hover:text-hive-cyan transition-colors">How It Works</a>
-          <a href="#platform" className="hover:text-hive-cyan transition-colors">HiveGrid OS</a>
+          <a href="#platform" className="hover:text-hive-cyan transition-colors">Platform</a>
           <a href="#contact" className="hover:text-hive-cyan transition-colors">Contact</a>
         </div>
       </nav>
 
-      {/* Hero Section - Option C */}
+      {/* Hero Section */}
       <section className="min-h-[90vh] bg-hive-base flex items-center justify-center relative px-6">
         <div className="max-w-5xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-hive-cyan/10 border border-hive-cyan/30 text-hive-cyan px-6 py-2.5 rounded-full text-sm mb-8 font-medium">
@@ -61,6 +56,15 @@ export default function HomePage() {
               For Investors & Partners
             </a>
           </div>
+
+          {/* Field Operations Portal Button (Static for now) */}
+          <div className="mt-8">
+            <a href="#"
+               className="inline-flex items-center gap-2 text-sm font-medium text-hive-cyan hover:text-white transition-colors border border-hive-cyan/40 hover:border-hive-cyan px-6 py-3 rounded-2xl">
+              Field Operations Portal →
+            </a>
+            <p className="text-xs text-white/50 mt-2">For electricians and field crews (coming soon)</p>
+          </div>
         </div>
       </section>
 
@@ -70,7 +74,7 @@ export default function HomePage() {
           The Distributed Future is Here
         </h3>
         <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed mb-12">
-          Instead of one giant facility, HiveGrid is building thousands of intelligent residential nodes.
+          Instead of one giant facility, HiveGrid Energy is building thousands of intelligent residential nodes.
           Every home becomes a smart power plant — combining battery storage, grid services, and future AI compute into one seamless platform.
         </p>
 
@@ -110,14 +114,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* HiveGrid Energy OS - Strengthened */}
+      {/* Platform Section - Corrected Branding */}
       <section id="platform" className="max-w-5xl mx-auto mt-24 px-6">
         <div className="text-center mb-12">
           <h3 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-hive-cyan via-hive-teal to-hive-yellow bg-clip-text text-transparent">
             HiveGrid Energy OS
           </h3>
           <p className="text-xl text-white/80 max-w-3xl mx-auto">
-            The operating system for high-quality, compliant distributed energy deployment.
+            The proprietary operating system powering high-quality, compliant distributed energy deployment.
           </p>
         </div>
 
