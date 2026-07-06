@@ -1,33 +1,88 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function HomePage() {
   const [email, setEmail] = useState('')
   const [submitted, setSubmitted] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [showBackToTop, setShowBackToTop] = useState(false)
 
   const handleSubmit = (e) => {
     e.preventDefault()
     if (email.trim()) setSubmitted(true)
   }
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
+
+  const closeMenu = () => {
+    setIsMenuOpen(false)
+  }
+
+  // Back to Top - Show button after scrolling down
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 400) {
+        setShowBackToTop(true)
+      } else {
+        setShowBackToTop(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
+
   return (
     <main className="min-h-screen bg-hive-base text-white overflow-hidden">
       {/* Navigation */}
-      <nav className="w-full bg-hive-base/95 backdrop-blur-md border-b border-white/10 sticky top-0 z-50 px-6 py-5 flex justify-between items-center">
-        <div className="flex items-center gap-4">
+      <nav className="w-full bg-hive-base/95 backdrop-blur-md border-b border-white/10 sticky top-0 z-50 px-6 py-5">
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
           {/* Logo / Company Name */}
-          <div>
-            <h1 className="text-3xl font-bold tracking-tighter">HiveGrid</h1>
-            <p className="text-xs text-hive-cyan -mt-1 tracking-[2px]">ENERGY</p>
+          <div className="flex items-center">
+            <div>
+              <h1 className="text-2xl md:text-3xl font-bold tracking-tighter">HiveGrid</h1>
+              <p className="text-xs text-hive-cyan -mt-1 tracking-[2px]">ENERGY</p>
+            </div>
           </div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-white">
+            <a href="#about" className="hover:text-hive-cyan transition-colors">About</a>
+            <a href="#how-it-works" className="hover:text-hive-cyan transition-colors">How It Works</a>
+            <a href="#platform" className="hover:text-hive-cyan transition-colors">Platform</a>
+            <a href="#contact" className="hover:text-hive-cyan transition-colors">Contact</a>
+          </div>
+
+          {/* Mobile Hamburger Button */}
+          <button 
+            onClick={toggleMenu}
+            className="md:hidden text-white text-2xl focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? '✕' : '☰'}
+          </button>
         </div>
 
-        <div className="flex items-center gap-8 text-sm font-medium text-white">
-          <a href="#about" className="hover:text-hive-cyan transition-colors">About</a>
-          <a href="#how-it-works" className="hover:text-hive-cyan transition-colors">How It Works</a>
-          <a href="#platform" className="hover:text-hive-cyan transition-colors">Platform</a>
-          <a href="#contact" className="hover:text-hive-cyan transition-colors">Contact</a>
-        </div>
+        {/* Mobile Menu Dropdown */}
+        {isMenuOpen && (
+          <div className="md:hidden mt-4 px-2 pb-4">
+            <div className="flex flex-col gap-4 text-sm font-medium bg-hive-panel border border-white/10 rounded-2xl p-4">
+              <a href="#about" onClick={closeMenu} className="hover:text-hive-cyan transition-colors py-1">About</a>
+              <a href="#how-it-works" onClick={closeMenu} className="hover:text-hive-cyan transition-colors py-1">How It Works</a>
+              <a href="#platform" onClick={closeMenu} className="hover:text-hive-cyan transition-colors py-1">Platform</a>
+              <a href="#contact" onClick={closeMenu} className="hover:text-hive-cyan transition-colors py-1">Contact</a>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
@@ -57,7 +112,7 @@ export default function HomePage() {
             </a>
           </div>
 
-          {/* Field Operations Portal Button (Static for now) */}
+          {/* Field Operations Portal Button */}
           <div className="mt-8">
             <a href="#"
                className="inline-flex items-center gap-2 text-sm font-medium text-hive-cyan hover:text-white transition-colors border border-hive-cyan/40 hover:border-hive-cyan px-6 py-3 rounded-2xl">
@@ -114,7 +169,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Platform Section - Corrected Branding */}
+      {/* Platform Section */}
       <section id="platform" className="max-w-5xl mx-auto mt-24 px-6">
         <div className="text-center mb-12">
           <h3 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-hive-cyan via-hive-teal to-hive-yellow bg-clip-text text-transparent">
@@ -189,6 +244,17 @@ export default function HomePage() {
         <div className="mb-2">Trust. Truth. Transparency.</div>
         © 2026 HiveGrid Energy LLC • Building the Distributed Future of Texas Energy
       </footer>
+
+      {/* Back to Top Button */}
+      {showBackToTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-hive-cyan text-hive-base shadow-lg hover:bg-cyan-400 transition-all"
+          aria-label="Back to top"
+        >
+          <span className="text-2xl font-bold">↑</span>
+        </button>
+      )}
     </main>
   )
 }
