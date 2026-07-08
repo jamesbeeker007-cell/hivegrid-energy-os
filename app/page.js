@@ -29,7 +29,6 @@ export default function HomePage() {
         setShowBackToTop(false)
       }
     }
-
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -63,7 +62,7 @@ export default function HomePage() {
           </div>
 
           {/* Mobile Hamburger Button */}
-          <button 
+          <button
             onClick={toggleMenu}
             className="md:hidden text-white text-2xl focus:outline-none"
             aria-label="Toggle menu"
@@ -112,13 +111,15 @@ export default function HomePage() {
             </a>
           </div>
 
-          {/* Field Operations Portal Button */}
+          {/* Field Operations Portal Button - Now Active */}
           <div className="mt-8">
-            <a href="#"
-               className="inline-flex items-center gap-2 text-sm font-medium text-hive-cyan hover:text-white transition-colors border border-hive-cyan/40 hover:border-hive-cyan px-6 py-3 rounded-2xl">
+            <a 
+              href="/portal"
+              className="inline-flex items-center gap-2 text-sm font-medium text-hive-cyan hover:text-white transition-colors border border-hive-cyan/40 hover:border-hive-cyan px-6 py-3 rounded-2xl"
+            >
               Field Operations Portal →
             </a>
-            <p className="text-xs text-white/50 mt-2">For electricians and field crews (coming soon)</p>
+            <p className="text-xs text-white/50 mt-2">For electricians and field crews</p>
           </div>
         </div>
       </section>
@@ -182,8 +183,8 @@ export default function HomePage() {
 
         <div className="bg-hive-panel border border-white/10 rounded-3xl p-10">
           <p className="text-lg text-white/80 mb-8 max-w-4xl">
-            HiveGrid Energy OS is our proprietary platform that connects field crews, regulatory compliance, 
-            installation quality, and grid asset activation into one seamless system. It is designed to solve 
+            HiveGrid Energy OS is our proprietary platform that connects field crews, regulatory compliance,
+            installation quality, and grid asset activation into one seamless system. It is designed to solve
             the biggest operational bottlenecks in residential battery deployment.
           </p>
 
