@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 export default function HomePage() {
   const [email, setEmail] = useState('')
@@ -12,56 +13,45 @@ export default function HomePage() {
     if (email.trim()) setSubmitted(true)
   }
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
+  const closeMenu = () => setIsMenuOpen(false)
 
-  const closeMenu = () => {
-    setIsMenuOpen(false)
-  }
-
-  // Back to Top - Show button after scrolling down
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 400) {
-        setShowBackToTop(true)
-      } else {
-        setShowBackToTop(false)
-      }
+      setShowBackToTop(window.scrollY > 400)
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    })
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   return (
     <main className="min-h-screen bg-hive-base text-white overflow-hidden">
       {/* Navigation */}
-      <nav className="w-full bg-hive-base/95 backdrop-blur-md border-b border-white/10 sticky top-0 z-50 px-6 py-5">
+      <nav className="w-full bg-hive-base/95 backdrop-blur-md border-b border-white/10 sticky top-0 z-50 px-6 py-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          {/* Logo / Company Name */}
-          <div className="flex items-center">
+          {/* Logo */}
+          <a href="/" className="flex items-center gap-3">
+            <img src="/images/logo-icon.svg" alt="HiveGrid Energy" className="h-10 w-10" />
             <div>
-              <h1 className="text-2xl md:text-3xl font-bold tracking-tighter">HiveGrid</h1>
-              <p className="text-xs text-hive-cyan -mt-1 tracking-[2px]">ENERGY</p>
+              <div className="text-xl md:text-2xl font-bold tracking-tight leading-none">HiveGrid</div>
+              <div className="text-[11px] text-hive-cyan tracking-[3px] font-medium -mt-0.5">ENERGY</div>
             </div>
-          </div>
+          </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-white">
+          <div className="hidden md:flex items-center gap-8 text-sm font-medium">
             <a href="#about" className="hover:text-hive-cyan transition-colors">About</a>
             <a href="#how-it-works" className="hover:text-hive-cyan transition-colors">How It Works</a>
             <a href="#platform" className="hover:text-hive-cyan transition-colors">Platform</a>
+            <a href="/energy-calculator" className="hover:text-hive-cyan transition-colors">Savings Calculator</a>
             <a href="#contact" className="hover:text-hive-cyan transition-colors">Contact</a>
           </div>
 
-          {/* Mobile Hamburger Button */}
+          {/* Mobile Hamburger */}
           <button
             onClick={toggleMenu}
             className="md:hidden text-white text-2xl focus:outline-none"
@@ -71,13 +61,14 @@ export default function HomePage() {
           </button>
         </div>
 
-        {/* Mobile Menu Dropdown */}
+        {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden mt-4 px-2 pb-4">
             <div className="flex flex-col gap-4 text-sm font-medium bg-hive-panel border border-white/10 rounded-2xl p-4">
               <a href="#about" onClick={closeMenu} className="hover:text-hive-cyan transition-colors py-1">About</a>
               <a href="#how-it-works" onClick={closeMenu} className="hover:text-hive-cyan transition-colors py-1">How It Works</a>
               <a href="#platform" onClick={closeMenu} className="hover:text-hive-cyan transition-colors py-1">Platform</a>
+              <a href="/energy-calculator" onClick={closeMenu} className="hover:text-hive-cyan transition-colors py-1">Savings Calculator</a>
               <a href="#contact" onClick={closeMenu} className="hover:text-hive-cyan transition-colors py-1">Contact</a>
             </div>
           </div>
@@ -91,27 +82,26 @@ export default function HomePage() {
             ⚡ RE-ENGINEERING THE TEXAS RESIDENTIAL GRID
           </div>
 
-          <h1 className="text-6xl md:text-7xl font-bold tracking-tighter mb-6 leading-none text-white">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tighter mb-6 leading-none text-white">
             Every Home a<br />Power Plant
           </h1>
 
-          <p className="text-2xl md:text-3xl text-white/80 max-w-3xl mx-auto mb-8">
+          <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto mb-10 leading-relaxed">
             Not one giant plant. Thousands of smart ones.<br />
             Every home. One grid. Infinite power.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#how-it-works"
-               className="bg-gradient-to-r from-hive-cyan to-hive-teal hover:brightness-110 text-hive-base font-semibold px-10 py-4 rounded-2xl text-lg transition-all">
-              Learn How It Works
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+            <a href="/energy-calculator"
+               className="bg-hive-cyan hover:brightness-110 text-hive-base font-semibold px-10 py-4 rounded-2xl text-lg transition-all">
+              Check Your Energy Savings →
             </a>
-            <a href="#contact"
+            <a href="#how-it-works"
                className="border border-hive-cyan/50 hover:bg-hive-cyan/10 font-semibold px-10 py-4 rounded-2xl text-lg transition-all">
-              For Investors & Partners
+              Learn How It Works
             </a>
           </div>
 
-          {/* Field Operations Portal Button - Now Active */}
           <div className="mt-8">
             <a 
               href="/portal"
@@ -126,7 +116,7 @@ export default function HomePage() {
 
       {/* About + Vision */}
       <section id="about" className="max-w-5xl mx-auto mt-24 px-6 text-center">
-        <h3 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-hive-cyan via-hive-teal to-hive-yellow bg-clip-text text-transparent">
+        <h3 className="text-4xl md:text-5xl font-bold mb-8 text-hive-cyan">
           The Distributed Future is Here
         </h3>
         <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed mb-12">
@@ -134,7 +124,6 @@ export default function HomePage() {
           Every home becomes a smart power plant — combining battery storage, grid services, and future AI compute into one seamless platform.
         </p>
 
-        {/* Vision Block */}
         <div className="max-w-3xl mx-auto border border-white/10 rounded-3xl py-10 px-8 bg-hive-panel/50">
           <h4 className="text-xl font-semibold mb-6 text-hive-cyan">Vision</h4>
           <div className="space-y-2 text-lg text-white/90">
@@ -148,22 +137,22 @@ export default function HomePage() {
 
       {/* How It Works */}
       <section id="how-it-works" className="max-w-5xl mx-auto mt-24 px-6">
-        <h3 className="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-hive-cyan via-hive-teal to-hive-yellow bg-clip-text text-transparent">
+        <h3 className="text-4xl md:text-5xl font-bold text-center mb-12 text-hive-cyan">
           How It Works
         </h3>
         <div className="grid md:grid-cols-3 gap-8">
           <div className="bg-hive-panel border border-white/10 rounded-3xl p-8 hover:border-hive-cyan/50 transition-colors">
-            <div className="text-5xl mb-6 text-hive-cyan">1</div>
+            <div className="text-5xl mb-6 text-hive-cyan font-bold">1</div>
             <h4 className="text-2xl font-bold mb-4">Install</h4>
             <p className="text-white/80">Premium battery systems installed at $0 upfront through our strategic partnerships.</p>
           </div>
           <div className="bg-hive-panel border border-white/10 rounded-3xl p-8 hover:border-hive-cyan/50 transition-colors">
-            <div className="text-5xl mb-6 text-hive-cyan">2</div>
+            <div className="text-5xl mb-6 text-hive-cyan font-bold">2</div>
             <h4 className="text-2xl font-bold mb-4">Optimize</h4>
             <p className="text-white/80">Your home automatically participates in ERCOT markets, earning revenue from volatility.</p>
           </div>
           <div className="bg-hive-panel border border-white/10 rounded-3xl p-8 hover:border-hive-cyan/50 transition-colors">
-            <div className="text-5xl mb-6 text-hive-cyan">3</div>
+            <div className="text-5xl mb-6 text-hive-cyan font-bold">3</div>
             <h4 className="text-2xl font-bold mb-4">Protect</h4>
             <p className="text-white/80">Reliable backup power during extreme Texas weather. Never risk blackouts again.</p>
           </div>
@@ -173,7 +162,7 @@ export default function HomePage() {
       {/* Platform Section */}
       <section id="platform" className="max-w-5xl mx-auto mt-24 px-6">
         <div className="text-center mb-12">
-          <h3 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-hive-cyan via-hive-teal to-hive-yellow bg-clip-text text-transparent">
+          <h3 className="text-4xl md:text-5xl font-bold mb-4 text-hive-cyan">
             HiveGrid Energy OS
           </h3>
           <p className="text-xl text-white/80 max-w-3xl mx-auto">
@@ -211,7 +200,7 @@ export default function HomePage() {
 
       {/* Contact */}
       <section id="contact" className="max-w-5xl mx-auto mt-24 px-6 text-center">
-        <h3 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-hive-cyan via-hive-teal to-hive-yellow bg-clip-text text-transparent">
+        <h3 className="text-4xl md:text-5xl font-bold mb-6 text-hive-cyan">
           Ready to Power the Future?
         </h3>
         <p className="text-white/80 mb-10">For accredited investors and strategic partners.</p>
@@ -228,7 +217,7 @@ export default function HomePage() {
               />
               <button
                 type="submit"
-                className="bg-gradient-to-r from-hive-cyan to-hive-teal hover:brightness-110 text-hive-base font-bold px-10 py-4 rounded-2xl whitespace-nowrap"
+                className="bg-hive-cyan hover:brightness-110 text-hive-base font-bold px-10 py-4 rounded-2xl whitespace-nowrap"
               >
                 Contact Us
               </button>
@@ -246,11 +235,11 @@ export default function HomePage() {
         © 2026 HiveGrid Energy LLC • Building the Distributed Future of Texas Energy
       </footer>
 
-      {/* Back to Top Button */}
+      {/* Back to Top */}
       {showBackToTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-hive-cyan text-hive-base shadow-lg hover:bg-cyan-400 transition-all"
+          className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-hive-cyan text-hive-base shadow-lg hover:brightness-110 transition-all"
           aria-label="Back to top"
         >
           <span className="text-2xl font-bold">↑</span>
