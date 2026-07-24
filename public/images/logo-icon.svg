@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
   <!-- Outer hexagon -->
-  <path d="M50 6 L90 29 L90 71 L50 94 L10 71 L10 29 Z" stroke="#00FFFF" stroke-width="4.5" fill="none" stroke-linejoin="round"/>
-  <!-- Accent cut (bottom-right style from brand) -->
+  <path d="M50 6 L90 29 L90 71 L50 94 L10 71 L10 29 Z" stroke="#0088CC" stroke-width="4.5" fill="none" stroke-linejoin="round"/>
+  <!-- Accent cut -->
   <path d="M78 38 L90 29 L90 55" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round"/>
   <!-- Lightning bolt -->
-  <path d="M58 26 L40 52 L49 52 L43 74 L64 45 L53 45 L58 26 Z" fill="#00FFFF"/>
+  <path d="M58 26 L40 52 L49 52 L43 74 L64 45 L53 45 L58 26 Z" fill="#0088CC"/>
 </svg>
