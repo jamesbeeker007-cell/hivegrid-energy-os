@@ -1,6 +1,5 @@
 'use client'
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
 
 export default function HomePage() {
   const [email, setEmail] = useState('')
@@ -38,17 +37,17 @@ export default function HomePage() {
             <img src="/images/logo-icon.svg" alt="HiveGrid Energy" className="h-10 w-10" />
             <div>
               <div className="text-xl md:text-2xl font-bold tracking-tight leading-none">HiveGrid</div>
-              <div className="text-[11px] text-hive-cyan tracking-[3px] font-medium -mt-0.5">ENERGY</div>
+              <div className="text-[11px] text-hive-blue tracking-[3px] font-medium -mt-0.5">ENERGY</div>
             </div>
           </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8 text-sm font-medium">
-            <a href="#about" className="hover:text-hive-cyan transition-colors">About</a>
-            <a href="#how-it-works" className="hover:text-hive-cyan transition-colors">How It Works</a>
-            <a href="#platform" className="hover:text-hive-cyan transition-colors">Platform</a>
-            <a href="/energy-calculator" className="hover:text-hive-cyan transition-colors">Savings Calculator</a>
-            <a href="#contact" className="hover:text-hive-cyan transition-colors">Contact</a>
+            <a href="#about" className="hover:text-hive-blue transition-colors">About</a>
+            <a href="#how-it-works" className="hover:text-hive-blue transition-colors">How It Works</a>
+            <a href="#platform" className="hover:text-hive-blue transition-colors">Platform</a>
+            <a href="/energy-calculator" className="hover:text-hive-blue transition-colors">Savings Calculator</a>
+            <a href="#contact" className="hover:text-hive-blue transition-colors">Contact</a>
           </div>
 
           {/* Mobile Hamburger */}
@@ -65,11 +64,11 @@ export default function HomePage() {
         {isMenuOpen && (
           <div className="md:hidden mt-4 px-2 pb-4">
             <div className="flex flex-col gap-4 text-sm font-medium bg-hive-panel border border-white/10 rounded-2xl p-4">
-              <a href="#about" onClick={closeMenu} className="hover:text-hive-cyan transition-colors py-1">About</a>
-              <a href="#how-it-works" onClick={closeMenu} className="hover:text-hive-cyan transition-colors py-1">How It Works</a>
-              <a href="#platform" onClick={closeMenu} className="hover:text-hive-cyan transition-colors py-1">Platform</a>
-              <a href="/energy-calculator" onClick={closeMenu} className="hover:text-hive-cyan transition-colors py-1">Savings Calculator</a>
-              <a href="#contact" onClick={closeMenu} className="hover:text-hive-cyan transition-colors py-1">Contact</a>
+              <a href="#about" onClick={closeMenu} className="hover:text-hive-blue transition-colors py-1">About</a>
+              <a href="#how-it-works" onClick={closeMenu} className="hover:text-hive-blue transition-colors py-1">How It Works</a>
+              <a href="#platform" onClick={closeMenu} className="hover:text-hive-blue transition-colors py-1">Platform</a>
+              <a href="/energy-calculator" onClick={closeMenu} className="hover:text-hive-blue transition-colors py-1">Savings Calculator</a>
+              <a href="#contact" onClick={closeMenu} className="hover:text-hive-blue transition-colors py-1">Contact</a>
             </div>
           </div>
         )}
@@ -78,7 +77,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="min-h-[90vh] bg-hive-base flex items-center justify-center relative px-6">
         <div className="max-w-5xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-hive-cyan/10 border border-hive-cyan/30 text-hive-cyan px-6 py-2.5 rounded-full text-sm mb-8 font-medium">
+          <div className="inline-flex items-center gap-2 bg-hive-blue/10 border border-hive-blue/30 text-hive-blue px-6 py-2.5 rounded-full text-sm mb-8 font-medium">
             ⚡ RE-ENGINEERING THE TEXAS RESIDENTIAL GRID
           </div>
 
@@ -93,11 +92,11 @@ export default function HomePage() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
             <a href="/energy-calculator"
-               className="bg-hive-cyan hover:brightness-110 text-hive-base font-semibold px-10 py-4 rounded-2xl text-lg transition-all">
+               className="bg-hive-blue hover:brightness-110 text-white font-semibold px-10 py-4 rounded-2xl text-lg transition-all">
               Check Your Energy Savings →
             </a>
             <a href="#how-it-works"
-               className="border border-hive-cyan/50 hover:bg-hive-cyan/10 font-semibold px-10 py-4 rounded-2xl text-lg transition-all">
+               className="border border-hive-blue/50 hover:bg-hive-blue/10 font-semibold px-10 py-4 rounded-2xl text-lg transition-all">
               Learn How It Works
             </a>
           </div>
@@ -105,7 +104,7 @@ export default function HomePage() {
           <div className="mt-8">
             <a 
               href="/portal"
-              className="inline-flex items-center gap-2 text-sm font-medium text-hive-cyan hover:text-white transition-colors border border-hive-cyan/40 hover:border-hive-cyan px-6 py-3 rounded-2xl"
+              className="inline-flex items-center gap-2 text-sm font-medium text-hive-blue hover:text-white transition-colors border border-hive-blue/40 hover:border-hive-blue px-6 py-3 rounded-2xl"
             >
               Field Operations Portal →
             </a>
@@ -116,7 +115,7 @@ export default function HomePage() {
 
       {/* About + Vision */}
       <section id="about" className="max-w-5xl mx-auto mt-24 px-6 text-center">
-        <h3 className="text-4xl md:text-5xl font-bold mb-8 text-hive-cyan">
+        <h3 className="text-4xl md:text-5xl font-bold mb-8 text-hive-blue">
           The Distributed Future is Here
         </h3>
         <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed mb-12">
@@ -125,7 +124,7 @@ export default function HomePage() {
         </p>
 
         <div className="max-w-3xl mx-auto border border-white/10 rounded-3xl py-10 px-8 bg-hive-panel/50">
-          <h4 className="text-xl font-semibold mb-6 text-hive-cyan">Vision</h4>
+          <h4 className="text-xl font-semibold mb-6 text-hive-blue">Vision</h4>
           <div className="space-y-2 text-lg text-white/90">
             <p>Not one giant plant. Thousands of smart ones.</p>
             <p>Every home. One grid. Infinite power.</p>
@@ -137,22 +136,22 @@ export default function HomePage() {
 
       {/* How It Works */}
       <section id="how-it-works" className="max-w-5xl mx-auto mt-24 px-6">
-        <h3 className="text-4xl md:text-5xl font-bold text-center mb-12 text-hive-cyan">
+        <h3 className="text-4xl md:text-5xl font-bold text-center mb-12 text-hive-blue">
           How It Works
         </h3>
         <div className="grid md:grid-cols-3 gap-8">
-          <div className="bg-hive-panel border border-white/10 rounded-3xl p-8 hover:border-hive-cyan/50 transition-colors">
-            <div className="text-5xl mb-6 text-hive-cyan font-bold">1</div>
+          <div className="bg-hive-panel border border-white/10 rounded-3xl p-8 hover:border-hive-blue/50 transition-colors">
+            <div className="text-5xl mb-6 text-hive-blue font-bold">1</div>
             <h4 className="text-2xl font-bold mb-4">Install</h4>
             <p className="text-white/80">Premium battery systems installed at $0 upfront through our strategic partnerships.</p>
           </div>
-          <div className="bg-hive-panel border border-white/10 rounded-3xl p-8 hover:border-hive-cyan/50 transition-colors">
-            <div className="text-5xl mb-6 text-hive-cyan font-bold">2</div>
+          <div className="bg-hive-panel border border-white/10 rounded-3xl p-8 hover:border-hive-blue/50 transition-colors">
+            <div className="text-5xl mb-6 text-hive-blue font-bold">2</div>
             <h4 className="text-2xl font-bold mb-4">Optimize</h4>
             <p className="text-white/80">Your home automatically participates in ERCOT markets, earning revenue from volatility.</p>
           </div>
-          <div className="bg-hive-panel border border-white/10 rounded-3xl p-8 hover:border-hive-cyan/50 transition-colors">
-            <div className="text-5xl mb-6 text-hive-cyan font-bold">3</div>
+          <div className="bg-hive-panel border border-white/10 rounded-3xl p-8 hover:border-hive-blue/50 transition-colors">
+            <div className="text-5xl mb-6 text-hive-blue font-bold">3</div>
             <h4 className="text-2xl font-bold mb-4">Protect</h4>
             <p className="text-white/80">Reliable backup power during extreme Texas weather. Never risk blackouts again.</p>
           </div>
@@ -162,7 +161,7 @@ export default function HomePage() {
       {/* Platform Section */}
       <section id="platform" className="max-w-5xl mx-auto mt-24 px-6">
         <div className="text-center mb-12">
-          <h3 className="text-4xl md:text-5xl font-bold mb-4 text-hive-cyan">
+          <h3 className="text-4xl md:text-5xl font-bold mb-4 text-hive-blue">
             HiveGrid Energy OS
           </h3>
           <p className="text-xl text-white/80 max-w-3xl mx-auto">
@@ -179,19 +178,19 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-2 gap-6">
             <div className="border border-white/10 rounded-2xl p-6">
-              <h5 className="font-semibold text-hive-cyan mb-2">Jurisdictional Compliance Dispatcher</h5>
+              <h5 className="font-semibold text-hive-blue mb-2">Jurisdictional Compliance Dispatcher</h5>
               <p className="text-white/80 text-sm">Real-time verification of electrician licenses against state and local requirements before job assignment.</p>
             </div>
             <div className="border border-white/10 rounded-2xl p-6">
-              <h5 className="font-semibold text-hive-cyan mb-2">Geofenced Job Dispatch</h5>
+              <h5 className="font-semibold text-hive-blue mb-2">Geofenced Job Dispatch</h5>
               <p className="text-white/80 text-sm">Dynamic assignment of jobs based on proximity, license validity, and specialization.</p>
             </div>
             <div className="border border-white/10 rounded-2xl p-6">
-              <h5 className="font-semibold text-hive-cyan mb-2">AR Install Assist</h5>
+              <h5 className="font-semibold text-hive-blue mb-2">AR Install Assist</h5>
               <p className="text-white/80 text-sm">Augmented reality overlays that guide electricians through code-compliant installations step-by-step.</p>
             </div>
             <div className="border border-white/10 rounded-2xl p-6">
-              <h5 className="font-semibold text-hive-cyan mb-2">Automated Verification Loop (“Verify-to-Pay”)</h5>
+              <h5 className="font-semibold text-hive-blue mb-2">Automated Verification Loop (“Verify-to-Pay”)</h5>
               <p className="text-white/80 text-sm">Computer vision quality control that verifies completed work, triggers payment, and activates the asset.</p>
             </div>
           </div>
@@ -200,7 +199,7 @@ export default function HomePage() {
 
       {/* Contact */}
       <section id="contact" className="max-w-5xl mx-auto mt-24 px-6 text-center">
-        <h3 className="text-4xl md:text-5xl font-bold mb-6 text-hive-cyan">
+        <h3 className="text-4xl md:text-5xl font-bold mb-6 text-hive-blue">
           Ready to Power the Future?
         </h3>
         <p className="text-white/80 mb-10">For accredited investors and strategic partners.</p>
@@ -213,17 +212,17 @@ export default function HomePage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="flex-1 bg-hive-panel border border-white/20 rounded-2xl px-6 py-4 focus:outline-none focus:border-hive-cyan"
+                className="flex-1 bg-hive-panel border border-white/20 rounded-2xl px-6 py-4 focus:outline-none focus:border-hive-blue"
               />
               <button
                 type="submit"
-                className="bg-hive-cyan hover:brightness-110 text-hive-base font-bold px-10 py-4 rounded-2xl whitespace-nowrap"
+                className="bg-hive-blue hover:brightness-110 text-white font-bold px-10 py-4 rounded-2xl whitespace-nowrap"
               >
                 Contact Us
               </button>
             </>
           ) : (
-            <div className="w-full py-6 text-center text-hive-cyan font-medium">
+            <div className="w-full py-6 text-center text-hive-blue font-medium">
               ✓ Thank you. We’ll be in touch shortly.
             </div>
           )}
@@ -239,7 +238,7 @@ export default function HomePage() {
       {showBackToTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-hive-cyan text-hive-base shadow-lg hover:brightness-110 transition-all"
+          className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-hive-blue text-white shadow-lg hover:brightness-110 transition-all"
           aria-label="Back to top"
         >
           <span className="text-2xl font-bold">↑</span>
