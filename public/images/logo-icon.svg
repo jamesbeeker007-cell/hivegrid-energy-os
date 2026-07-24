@@ -1,8 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
-  <!-- Outer hexagon -->
-  <path d="M50 6 L90 29 L90 71 L50 94 L10 71 L10 29 Z" stroke="#0088CC" stroke-width="4.5" fill="none" stroke-linejoin="round"/>
-  <!-- Accent cut -->
-  <path d="M78 38 L90 29 L90 55" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Outer hexagon outline -->
+  <path d="M50 8 L88 30 L88 70 L50 92 L12 70 L12 30 Z" stroke="#0088CC" stroke-width="4" fill="none" stroke-linejoin="round"/>
+  
+  <!-- Solid roof (top face of hexagon) -->
+  <path d="M50 8 L88 30 L50 50 L12 30 Z" fill="#FFFFFF"/>
+  
+  <!-- Subtle side shading to keep dimension -->
+  <path d="M88 30 L88 70 L50 92 L50 50 Z" fill="#0088CC" fill-opacity="0.12"/>
+  <path d="M12 30 L12 70 L50 92 L50 50 Z" fill="#000000" fill-opacity="0.18"/>
+  
   <!-- Lightning bolt -->
-  <path d="M58 26 L40 52 L49 52 L43 74 L64 45 L53 45 L58 26 Z" fill="#0088CC"/>
+  <path d="M57 28 L40 51 L48 51 L43 72 L62 46 L52 46 L57 28 Z" fill="#0088CC"/>
 </svg>
