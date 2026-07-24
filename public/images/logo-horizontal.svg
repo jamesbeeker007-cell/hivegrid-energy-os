@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 90" fill="none">
   <!-- Icon -->
   <g transform="translate(0, 5)">
-    <path d="M40 4 L75 24 L75 60 L40 80 L5 60 L5 24 Z" stroke="#00FFFF" stroke-width="4" fill="none" stroke-linejoin="round"/>
+    <path d="M40 4 L75 24 L75 60 L40 80 L5 60 L5 24 Z" stroke="#0088CC" stroke-width="4" fill="none" stroke-linejoin="round"/>
     <path d="M65 30 L75 24 L75 45" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
-    <path d="M46 20 L32 44 L40 44 L35 64 L52 38 L43 38 L46 20 Z" fill="#00FFFF"/>
+    <path d="M46 20 L32 44 L40 44 L35 64 L52 38 L43 38 L46 20 Z" fill="#0088CC"/>
   </g>
   <!-- Wordmark -->
   <text x="95" y="48" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="36" font-weight="700" fill="#FFFFFF" letter-spacing="-0.5">HiveGrid</text>
-  <text x="97" y="72" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" font-weight="600" fill="#00FFFF" letter-spacing="5.5">ENERGY</text>
+  <text x="97" y="72" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" font-weight="600" fill="#0088CC" letter-spacing="5.5">ENERGY</text>
 </svg>
