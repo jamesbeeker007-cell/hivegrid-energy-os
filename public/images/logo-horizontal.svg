@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 90" fill="none">
-  <!-- Icon with roof -->
+  <!-- Icon with thinner roof -->
   <g transform="translate(0, 5)">
     <!-- Outer hexagon outline -->
     <path d="M40 4 L75 24 L75 60 L40 80 L5 60 L5 24 Z" stroke="#0088CC" stroke-width="3.5" fill="none" stroke-linejoin="round"/>
-    <!-- Solid roof (top face) -->
-    <path d="M40 4 L75 24 L40 42 L5 24 Z" fill="#FFFFFF"/>
-    <!-- Side shading -->
-    <path d="M75 24 L75 60 L40 80 L40 42 Z" fill="#0088CC" fill-opacity="0.12"/>
-    <path d="M5 24 L5 60 L40 80 L40 42 Z" fill="#000000" fill-opacity="0.18"/>
+    <!-- Thin white roof -->
+    <path d="M40 4 L73.5 23.3 L40 40.5 L6.5 23.3 Z" fill="#FFFFFF"/>
+    <!-- Subtle side shading -->
+    <path d="M75 24 L75 60 L40 80 L40 42 Z" fill="#0088CC" fill-opacity="0.08"/>
+    <path d="M5 24 L5 60 L40 80 L40 42 Z" fill="#000000" fill-opacity="0.12"/>
     <!-- Lightning bolt -->
     <path d="M46 22 L32 43 L39 43 L35 62 L52 39 L44 39 L46 22 Z" fill="#0088CC"/>
   </g>
