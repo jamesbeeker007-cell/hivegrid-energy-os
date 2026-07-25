@@ -7,18 +7,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Official HiveGrid Energy Brand Palette (July 2026)
-        'hive-base': '#0a0f14',      // Deep Navy
-        'hive-panel': '#121a24',     // Slightly lighter navy for cards
-        'hive-cyan': '#00FFFF',      // Electric Cyan (primary accent)
-        'hive-teal': '#00E5E5',      // Soft teal variant
-        'hive-emerald': '#34F0A6',
-        'hive-yellow': '#F4E05B',
-        'hive-amber': '#FFBB33',
-        'hive-orange': '#FF8A4D',
-        'hive-slate': '#A0AEC0',     // Cool gray-ish for secondary text
-        'hive-gray': '#808080',      // Official Cool Gray
+        // Official HiveGrid Energy Brand Palette – Option 2 (July 2026)
+        'hive-base': '#0A0F14',       // Deep Navy (primary background)
+        'hive-panel': '#121A24',      // Slightly lighter navy for cards
+        'hive-blue': '#0088CC',       // HiveGrid Blue (main accent / CTAs)
+        'hive-cyan': '#00D6E3',       // Energy Cyan (secondary accent)
+        'hive-green': '#34E07A',      // Electric Green (savings / success)
+        'hive-gray': '#808080',       // Cool Gray
+        'hive-slate': '#A0AEC0',      // Lighter secondary text
         'hive-white': '#FFFFFF',
+        // Keep a couple of legacy aliases so existing code doesn't break
+        'hive-teal': '#00D6E3',
+        'hive-emerald': '#34E07A',
+        'hive-amber': '#FFBB33',
       },
       fontFamily: {
         'space-grotesk': ['Space Grotesk', 'system-ui', 'sans-serif'],
