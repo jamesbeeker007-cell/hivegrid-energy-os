@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 90" fill="none">
+  <!-- Icon - same as dark version but optimized for light backgrounds -->
+  <g transform="translate(0, 5)">
+    <!-- Outer hexagon - Cool Gray -->
+    <path d="M40 4 L75 24 L75 60 L40 80 L5 60 L5 24 Z" stroke="#808080" stroke-width="3.5" fill="none" stroke-linejoin="round"/>
+    <!-- White accent becomes a subtle dark accent on light bg so it still shows -->
+    <path d="M65 32 L75 24 L75 48" stroke="#0A0F14" stroke-width="3" stroke-linecap="round" opacity="0.35"/>
+    <!-- Lightning bolt - HiveGrid Blue -->
+    <path d="M46 20 L32 44 L40 44 L35 64 L52 38 L43 38 L46 20 Z" fill="#0088CC"/>
+  </g>
+  <!-- Wordmark for light backgrounds -->
+  <text x="95" y="48" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="36" font-weight="700" fill="#0A0F14" letter-spacing="-0.5">HiveGrid</text>
+  <text x="97" y="72" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" font-weight="600" fill="#0088CC" letter-spacing="5.5">ENERGY</text>
+</svg>
