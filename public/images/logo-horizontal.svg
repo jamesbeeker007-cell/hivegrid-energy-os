@@ -1,8 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 90" fill="none">
-  <!-- Icon -->
+  <!-- Exact same icon as logo-icon.svg -->
   <g transform="translate(0, 5)">
+    <!-- Outer hexagon - Cool Gray -->
     <path d="M40 4 L75 24 L75 60 L40 80 L5 60 L5 24 Z" stroke="#808080" stroke-width="3.5" fill="none" stroke-linejoin="round"/>
+    <!-- White accent cut (lower-right) -->
     <path d="M65 32 L75 24 L75 48" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+    <!-- Lightning bolt - HiveGrid Blue -->
     <path d="M46 20 L32 44 L40 44 L35 64 L52 38 L43 38 L46 20 Z" fill="#0088CC"/>
   </g>
   <!-- Wordmark -->
