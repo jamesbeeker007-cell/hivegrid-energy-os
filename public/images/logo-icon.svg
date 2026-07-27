@@ -1,10 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
-  <!-- Outer hexagon - Cool Gray -->
-  <path d="M50 6 L90 29 L90 71 L50 94 L10 71 L10 29 Z" stroke="#808080" stroke-width="4.5" fill="none" stroke-linejoin="round"/>
+  <!-- Segmented hexagon ring matching official brand -->
+  <!-- Main gray body of the hexagon -->
+  <path d="M50 8 L85 28 L85 55 L50 50 Z" stroke="#808080" stroke-width="7" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M50 8 L15 28 L15 72 L50 92 L85 72 L85 55" stroke="#808080" stroke-width="7" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
   
-  <!-- White accent cut (lower-right style from approved brand sheet) -->
-  <path d="M78 42 L90 29 L90 58" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+  <!-- White lower-right segment (official accent) -->
+  <path d="M85 55 L85 72 L50 92 L50 75" stroke="#FFFFFF" stroke-width="7" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
   
   <!-- Lightning bolt - HiveGrid Blue -->
-  <path d="M58 26 L40 52 L49 52 L43 74 L64 45 L53 45 L58 26 Z" fill="#0088CC"/>
+  <path d="M58 26 L39 52 L48 52 L42 74 L65 45 L54 45 L58 26 Z" fill="#0088CC"/>
 </svg>
