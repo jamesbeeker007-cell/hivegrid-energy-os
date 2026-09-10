@@ -2,7 +2,7 @@ import './globals.css'
 
 export const metadata = {
   title: 'HiveGrid Energy',
-  description: 'Every Home a Power Plant — Residential battery storage & distributed energy for Texas',
+  description: 'One crew. One home. One standard. HiveGrid Energy installs residential battery systems in Texas and runs HiveGrid OS.',
 }
 
 export default function RootLayout({ children }) {
