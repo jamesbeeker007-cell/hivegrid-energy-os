@@ -4,12 +4,36 @@ import { useState, useEffect } from 'react'
 export default function HomePage() {
   const [email, setEmail] = useState('')
   const [submitted, setSubmitted] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [sendError, setSendError] = useState('')
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [showBackToTop, setShowBackToTop] = useState(false)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    if (email.trim()) setSubmitted(true)
+    if (!email.trim()) return
+    setSending(true)
+    setSendError('')
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/sandram@hivegridenergy.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          _subject: 'HiveGrid Energy website contact',
+          source: 'hivegrid-energy-os landing page',
+        }),
+      })
+      if (!res.ok) throw new Error('send failed')
+      setSubmitted(true)
+    } catch (err) {
+      setSendError('Could not send just now. Email sandram@hivegridenergy.com directly.')
+    } finally {
+      setSending(false)
+    }
   }
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
@@ -149,11 +173,16 @@ export default function HomePage() {
       <section id="contact" className="max-w-5xl mx-auto mt-24 px-6 text-center">
         <h3 className="text-4xl md:text-5xl font-bold mb-6 text-hive-blue">Work with HiveGrid</h3>
         <p className="text-white/80 mb-10">For strategic partners and accredited investors.</p>
-        <form onSubmit={handleSubmit} className="max-w-md mx-auto flex gap-3">
+        <form onSubmit={handleSubmit} className="max-w-md mx-auto flex flex-col gap-3">
           {!submitted ? (
             <>
-              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter your email" className="flex-1 bg-hive-panel border border-white/20 rounded-2xl px-6 py-4 focus:outline-none focus:border-hive-blue" />
-              <button type="submit" className="bg-hive-blue hover:brightness-110 text-white font-bold px-10 py-4 rounded-2xl whitespace-nowrap">Contact Us</button>
+              <div className="flex gap-3">
+                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter your email" required className="flex-1 bg-hive-panel border border-white/20 rounded-2xl px-6 py-4 focus:outline-none focus:border-hive-blue" />
+                <button type="submit" disabled={sending} className="bg-hive-blue hover:brightness-110 text-white font-bold px-10 py-4 rounded-2xl whitespace-nowrap disabled:opacity-60">
+                  {sending ? 'Sending…' : 'Contact Us'}
+                </button>
+              </div>
+              {sendError && <p className="text-sm text-red-400">{sendError}</p>}
             </>
           ) : (
             <div className="w-full py-6 text-center text-hive-blue font-medium">Thank you. We will be in touch shortly.</div>
