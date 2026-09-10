@@ -1,17 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 90" fill="none">
-  <!-- Icon with thinner roof -->
-  <g transform="translate(0, 5)">
-    <!-- Outer hexagon outline -->
-    <path d="M40 4 L75 24 L75 60 L40 80 L5 60 L5 24 Z" stroke="#0088CC" stroke-width="3.5" fill="none" stroke-linejoin="round"/>
-    <!-- Thin white roof -->
-    <path d="M40 4 L73.5 23.3 L40 40.5 L6.5 23.3 Z" fill="#FFFFFF"/>
-    <!-- Subtle side shading -->
-    <path d="M75 24 L75 60 L40 80 L40 42 Z" fill="#0088CC" fill-opacity="0.08"/>
-    <path d="M5 24 L5 60 L40 80 L40 42 Z" fill="#000000" fill-opacity="0.12"/>
-    <!-- Lightning bolt -->
-    <path d="M46 22 L32 43 L39 43 L35 62 L52 39 L44 39 L46 22 Z" fill="#0088CC"/>
+  <g transform="translate(4, 8)">
+    <path d="M37 4 L70 23 L70 57 L37 76 L10 61" stroke="#D0D5DC" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M8 50 L8 23 L37 4" stroke="#8A9099" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M44 18 L27 40 L36 40 L31 60 L50 36 L41 36 Z" fill="#0088CC"/>
   </g>
-  <!-- Wordmark -->
   <text x="95" y="48" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="36" font-weight="700" fill="#FFFFFF" letter-spacing="-0.5">HiveGrid</text>
   <text x="97" y="72" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" font-weight="600" fill="#0088CC" letter-spacing="5.5">ENERGY</text>
 </svg>
