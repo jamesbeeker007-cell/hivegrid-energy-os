@@ -1,5 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
-  <path d="M50 10 L86 31 L86 69 L50 90 L18 72" stroke="#D0D5DC" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <path d="M14 58 L14 31 L50 10" stroke="#8A9099" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <path d="M58 26 L38 52 L49 52 L42 76 L66 46 L54 46 Z" fill="#0088CC"/>
+  <defs>
+    <linearGradient id="hexStroke" x1="12" y1="8" x2="88" y2="92" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#5B4EFF"/>
+      <stop offset="45%" stop-color="#00FFFF"/>
+      <stop offset="100%" stop-color="#00D4A4"/>
+    </linearGradient>
+    <linearGradient id="boltFill" x1="50" y1="22" x2="50" y2="78" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFE566"/>
+      <stop offset="55%" stop-color="#FFFF00"/>
+      <stop offset="100%" stop-color="#C45A24"/>
+    </linearGradient>
+  </defs>
+  <path d="M50 8 L86 29 L86 71 L50 92 L14 71 L14 29 Z" stroke="url(#hexStroke)" stroke-width="7" stroke-linejoin="round" fill="none"/>
+  <path d="M56 24 L36 52 H50 L42 76 L68 44 H52 Z" fill="url(#boltFill)"/>
 </svg>

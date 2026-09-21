@@ -7,19 +7,22 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Official HiveGrid Energy Brand Palette – Option 2 (July 2026)
-        'hive-base': '#0A0F14',       // Deep Navy (primary background)
-        'hive-panel': '#121A24',      // Slightly lighter navy for cards
-        'hive-blue': '#0088CC',       // HiveGrid Blue (main accent / CTAs)
-        'hive-cyan': '#00D6E3',       // Energy Cyan (secondary accent)
-        'hive-green': '#34E07A',      // Electric Green (savings / success)
-        'hive-gray': '#808080',       // Cool Gray
-        'hive-slate': '#A0AEC0',      // Lighter secondary text
+        // 21 Sep 2026 board + working hexes pending review
+        'hive-indigo': '#110066',
+        'hive-light': '#F7F8FC',
+        'hive-blue': '#5B4EFF',
+        'hive-cyan': '#00FFFF',
+        'hive-yellow': '#FFFF00',
+        'hive-copper': '#C45A24',
         'hive-white': '#FFFFFF',
-        // Keep a couple of legacy aliases so existing code doesn't break
-        'hive-teal': '#00D6E3',
-        'hive-emerald': '#34E07A',
-        'hive-amber': '#FFBB33',
+        'hive-base': '#110066',
+        'hive-panel': '#1A0A4A',
+        'hive-green': '#00D4A4',
+        'hive-gray': '#6B7280',
+        'hive-slate': '#4B5568',
+        'hive-teal': '#00FFFF',
+        'hive-emerald': '#00D4A4',
+        'hive-amber': '#FFFF00',
       },
       fontFamily: {
         'space-grotesk': ['Space Grotesk', 'system-ui', 'sans-serif'],

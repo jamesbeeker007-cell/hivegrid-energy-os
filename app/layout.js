@@ -2,7 +2,8 @@ import './globals.css'
 
 export const metadata = {
   title: 'HiveGrid Energy',
-  description: 'One crew. One home. One standard. HiveGrid Energy installs residential battery systems in Texas and runs HiveGrid OS.',
+  description:
+    'One crew. One home. One standard. HiveGrid Energy, LLC manages residential battery-storage installations from partner handoff through final inspection and project closeout.',
 }
 
 export default function RootLayout({ children }) {
@@ -11,9 +12,12 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
       </head>
-      <body className="min-h-screen bg-hive-base text-white antialiased font-space-grotesk">
+      <body className="min-h-screen bg-hive-light text-hive-indigo antialiased font-space-grotesk">
         {children}
       </body>
     </html>
