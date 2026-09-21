@@ -15,6 +15,6 @@
     <path d="M46 4 L80 24 L80 64 L46 84 L12 64 L12 24 Z" stroke="url(#hexStrokeH)" stroke-width="6.5" stroke-linejoin="round" fill="none"/>
     <path d="M52 18 L34 44 H47 L40 66 L64 38 H50 Z" fill="url(#boltFillH)"/>
   </g>
-  <text x="108" y="52" font-family="Space Grotesk, system-ui, sans-serif" font-size="38" font-weight="700" fill="#110066">HiveGrid</text>
-  <text x="110" y="78" font-family="Space Grotesk, system-ui, sans-serif" font-size="13" font-weight="600" fill="#5B4EFF" letter-spacing="7">ENERGY</text>
+  <text x="108" y="52" font-family="Space Grotesk, system-ui, sans-serif" font-size="38" font-weight="700" fill="#FFFFFF">HiveGrid</text>
+  <text x="110" y="78" font-family="Space Grotesk, system-ui, sans-serif" font-size="13" font-weight="600" fill="#00FFFF" letter-spacing="7">ENERGY</text>
 </svg>

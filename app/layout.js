@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-screen bg-hive-light text-hive-indigo antialiased font-space-grotesk">
+      <body className="min-h-screen bg-hive-indigo text-white antialiased font-space-grotesk">
         {children}
       </body>
     </html>
