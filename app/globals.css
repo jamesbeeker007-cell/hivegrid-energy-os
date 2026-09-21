@@ -12,12 +12,32 @@ body {
   overflow-x: hidden;
 }
 .hive-field {
-  background-color: #0B0050;
+  background-color: #07002E;
   background-image:
-    radial-gradient(ellipse 80% 50% at 12% -8%, rgba(91, 78, 255, 0.5), transparent 55%),
-    radial-gradient(ellipse 55% 40% at 92% 6%, rgba(0, 255, 255, 0.16), transparent 50%),
-    radial-gradient(ellipse 50% 35% at 78% 100%, rgba(91, 78, 255, 0.18), transparent 55%);
+    radial-gradient(ellipse 90% 55% at 8% -15%, rgba(91, 78, 255, 0.55), transparent 58%),
+    radial-gradient(ellipse 50% 40% at 95% 0%, rgba(0, 255, 255, 0.16), transparent 52%),
+    radial-gradient(ellipse 45% 30% at 80% 95%, rgba(196, 90, 36, 0.16), transparent 55%),
+    radial-gradient(ellipse 30% 25% at 20% 90%, rgba(91, 78, 255, 0.2), transparent 50%);
 }
 .hive-card {
-  background: linear-gradient(180deg, rgba(26, 10, 74, 0.92) 0%, rgba(11, 0, 80, 0.92) 100%);
+  background: linear-gradient(165deg, rgba(40, 18, 96, 0.75) 0%, rgba(8, 0, 46, 0.88) 100%);
+  box-shadow: 0 0 0 1px rgba(0, 255, 255, 0.06), 0 18px 40px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.hive-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 0 1px rgba(196, 90, 36, 0.35), 0 22px 50px rgba(91, 78, 255, 0.25);
+}
+.hive-watermark {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0.14;
+}
+.hive-watermark img {
+  width: min(72vw, 420px);
+  filter: drop-shadow(0 0 40px rgba(0, 255, 255, 0.35));
 }
