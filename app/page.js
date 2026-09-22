@@ -153,7 +153,7 @@ export default function HomePage() {
             <a href="#how-it-works" className="hover:text-hive-copper">How It Works</a>
             <a href="#platform" className="hover:text-hive-cyan">Platform</a>
             <a href="#contact" className="hover:text-hive-copper">Contact</a>
-            <a href="/portal" className="text-white/30 hover:text-white/60 text-xs">Portal</a>
+            <a href="/portal" className="hover:text-hive-cyan">Portal</a>
           </div>
           <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-hive-cyan text-3xl leading-none" aria-label="Toggle menu">
             {isMenuOpen ? '✕' : '☰'}
@@ -166,7 +166,7 @@ export default function HomePage() {
               <a href="#how-it-works" onClick={closeMenu} className="text-hive-copper">How It Works</a>
               <a href="#platform" onClick={closeMenu} className="text-hive-cyan">Platform</a>
               <a href="#contact" onClick={closeMenu} className="text-hive-copper">Contact</a>
-              <a href="/portal" onClick={closeMenu} className="text-white/40 text-xs">Portal</a>
+              <a href="/portal" onClick={closeMenu} className="text-hive-cyan">Portal</a>
             </div>
           </div>
         )}
@@ -280,7 +280,7 @@ export default function HomePage() {
             <div className="grid sm:grid-cols-2 gap-4">
               {MODULES.map((mod) => (
                 <div key={mod.name} className="rounded-2xl p-5 bg-black/25 border border-white/8">
-                  <h3 className="font-semibold text-hive-cyan mb-1.5">{mod.name}</h3>
+                  <h3 className={`font-semibold text-hive-cyan mb-1.5`}>{mod.name}</h3>
                   <p className="text-sm text-white/65">{mod.body}</p>
                 </div>
               ))}
