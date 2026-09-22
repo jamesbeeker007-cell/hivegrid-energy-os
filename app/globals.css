@@ -14,19 +14,22 @@ body {
 .hive-field {
   background-color: #07002E;
   background-image:
-    radial-gradient(ellipse 90% 55% at 8% -15%, rgba(91, 78, 255, 0.55), transparent 58%),
-    radial-gradient(ellipse 50% 40% at 95% 0%, rgba(0, 255, 255, 0.16), transparent 52%),
-    radial-gradient(ellipse 45% 30% at 80% 95%, rgba(196, 90, 36, 0.16), transparent 55%),
-    radial-gradient(ellipse 30% 25% at 20% 90%, rgba(91, 78, 255, 0.2), transparent 50%);
+    radial-gradient(ellipse 90% 55% at 8% -15%, rgba(91, 78, 255, 0.45), transparent 58%),
+    radial-gradient(ellipse 50% 40% at 95% 0%, rgba(0, 255, 255, 0.12), transparent 52%),
+    radial-gradient(ellipse 40% 28% at 78% 95%, rgba(196, 90, 36, 0.12), transparent 55%);
 }
 .hive-card {
-  background: linear-gradient(165deg, rgba(40, 18, 96, 0.75) 0%, rgba(8, 0, 46, 0.88) 100%);
-  box-shadow: 0 0 0 1px rgba(0, 255, 255, 0.06), 0 18px 40px rgba(0, 0, 0, 0.35);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  background: linear-gradient(165deg, rgba(40, 18, 96, 0.72) 0%, rgba(8, 0, 46, 0.9) 100%);
+  box-shadow: 0 0 0 1px rgba(0, 255, 255, 0.05), 0 18px 40px rgba(0, 0, 0, 0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .hive-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 0 1px rgba(196, 90, 36, 0.35), 0 22px 50px rgba(91, 78, 255, 0.25);
+  transform: translateY(-3px);
+  box-shadow: 0 0 0 1px rgba(196, 90, 36, 0.28), 0 22px 50px rgba(91, 78, 255, 0.2);
+}
+@keyframes hivePulse {
+  0%, 100% { opacity: 0.12; transform: scale(0.96); filter: drop-shadow(0 0 12px rgba(0,255,255,0.15)); }
+  45% { opacity: 0.22; transform: scale(1); filter: drop-shadow(0 0 36px rgba(0,255,255,0.35)); }
 }
 .hive-watermark {
   position: absolute;
@@ -35,9 +38,15 @@ body {
   align-items: center;
   justify-content: center;
   pointer-events: none;
-  opacity: 0.14;
 }
 .hive-watermark img {
-  width: min(72vw, 420px);
-  filter: drop-shadow(0 0 40px rgba(0, 255, 255, 0.35));
+  width: min(68vw, 380px);
+  animation: hivePulse 5.5s ease-in-out infinite;
+}
+@keyframes hiveBolt {
+  0%, 70%, 100% { filter: drop-shadow(0 0 6px rgba(255,255,0,0.25)); }
+  78% { filter: drop-shadow(0 0 18px rgba(255,255,0,0.8)); }
+}
+.hive-mark-live {
+  animation: hiveBolt 5.5s ease-in-out infinite;
 }
