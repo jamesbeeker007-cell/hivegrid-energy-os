@@ -150,9 +150,9 @@ export default function HomePage() {
           </a>
           <div className="hidden md:flex items-center gap-7 text-sm font-medium text-white/75">
             <a href="#about" className="hover:text-hive-cyan">About</a>
-            <a href="#how-it-works" className="hover:text-hive-copper">How It Works</a>
+            <a href="#how-it-works" className="hover:text-hive-gold">How It Works</a>
             <a href="#platform" className="hover:text-hive-cyan">Platform</a>
-            <a href="#contact" className="hover:text-hive-copper">Contact</a>
+            <a href="#contact" className="hover:text-hive-gold">Contact</a>
             <a href="/portal" className="hover:text-hive-cyan">Portal</a>
           </div>
           <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-hive-cyan text-3xl leading-none" aria-label="Toggle menu">
@@ -163,9 +163,9 @@ export default function HomePage() {
           <div className="md:hidden mt-3">
             <div className="flex flex-col gap-3 text-sm hive-card border border-white/10 rounded-2xl p-4">
               <a href="#about" onClick={closeMenu} className="text-hive-cyan">About</a>
-              <a href="#how-it-works" onClick={closeMenu} className="text-hive-copper">How It Works</a>
+              <a href="#how-it-works" onClick={closeMenu} className="text-hive-gold">How It Works</a>
               <a href="#platform" onClick={closeMenu} className="text-hive-cyan">Platform</a>
-              <a href="#contact" onClick={closeMenu} className="text-hive-copper">Contact</a>
+              <a href="#contact" onClick={closeMenu} className="text-hive-gold">Contact</a>
               <a href="/portal" onClick={closeMenu} className="text-hive-cyan">Portal</a>
             </div>
           </div>
@@ -183,8 +183,8 @@ export default function HomePage() {
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight mb-6 leading-[0.95] text-hive-cyan">
             One crew.<br />One home.<br />One standard.
           </h1>
-          <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-4">
-            <span className="italic text-hive-copper">“Building Trust Through Transparency”</span>
+          <p className="text-lg md:text-xl max-w-2xl mx-auto mb-4">
+            <span className="italic text-white">“Building Trust Through Transparency”</span>
           </p>
           <p className="text-white/60 text-sm md:text-base max-w-xl mx-auto mb-12">
             Channel partners are the face of the asset.
@@ -193,7 +193,7 @@ export default function HomePage() {
             <a href="#how-it-works" className="bg-hive-cyan text-hive-indigo hover:brightness-110 font-semibold px-10 py-4 rounded-2xl">
               Start to finish
             </a>
-            <a href="#contact" className="border border-hive-copper/70 bg-hive-copper/15 hover:bg-hive-copper/25 font-semibold px-10 py-4 rounded-2xl text-hive-copper">
+            <a href="#contact" className="bg-hive-gold hover:brightness-110 font-semibold px-10 py-4 rounded-2xl text-hive-ink">
               For partners
             </a>
           </div>
@@ -214,7 +214,7 @@ export default function HomePage() {
       <section id="about" className="px-5 pb-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold text-hive-cyan">What HiveGrid actually is</h2>
-          <div className="h-px w-16 bg-hive-copper mt-4 mb-8" />
+          <div className="h-px w-16 bg-hive-gold mt-4 mb-8" />
           <div className="hive-card border border-white/10 rounded-3xl p-6 md:p-10 space-y-5 text-base md:text-lg leading-relaxed text-white/85">
             <p>
               HiveGrid Energy, LLC manages residential battery-storage installations from partner handoff through final inspection and project closeout. It coordinates site planning, engineering, permitting, licensed electrical installation, inspection, contractor management, and project administration. HiveGrid OS manages the workflow. Battery hardware and battery-control software are supplied and owned by the contracted energy-storage partner.
@@ -223,8 +223,8 @@ export default function HomePage() {
               HiveGrid Energy does not own the batteries, does not sell them, and does not operate a VPP. Channel partners are the face of the asset.
             </p>
           </div>
-          <div className="mt-4 hive-card border border-hive-copper/30 rounded-3xl p-6 md:p-8 text-white/80 leading-relaxed">
-            <div className="text-xs tracking-[0.18em] uppercase text-hive-copper mb-3">The bottleneck</div>
+          <div className="mt-4 hive-card border border-hive-gold/30 rounded-3xl p-6 md:p-8 text-white/80 leading-relaxed">
+            <div className="text-xs tracking-[0.18em] uppercase text-hive-gold mb-3">The bottleneck</div>
             <p>
               Contracts are already sold. The work stalls between city or county permit and a crew that can finish the home. HiveGrid Energy runs that stretch — permit through inspection and closeout — and hands the completed install back to the partner.
             </p>
@@ -246,7 +246,7 @@ export default function HomePage() {
       <section id="how-it-works" className="px-5 pb-16">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold text-hive-cyan">Start to finish</h2>
-          <div className="h-px w-16 bg-hive-copper mt-4 mb-5" />
+          <div className="h-px w-16 bg-hive-gold mt-4 mb-5" />
           <p className="text-white/70 text-base md:text-lg max-w-3xl mb-10">
             The unit of work is partner contract through city or county closeout. Partner pays HGE. HGE pays the field costs.
           </p>
@@ -254,7 +254,7 @@ export default function HomePage() {
             {STEPS.map((step) => (
               <div key={step.n} className="hive-card border border-white/10 rounded-3xl p-7 min-h-[220px]">
                 <div className={`inline-flex text-[11px] font-semibold tracking-[0.2em] uppercase px-3 py-1 rounded-full mb-5 ${
-                  step.hot ? 'bg-hive-copper/20 text-hive-copper' : 'bg-white/5 text-hive-cyan'
+                  step.hot ? 'bg-hive-gold/20 text-hive-gold' : 'bg-white/5 text-hive-cyan'
                 }`}>
                   {step.n} {step.title}
                 </div>
@@ -269,7 +269,7 @@ export default function HomePage() {
       <section id="platform" className="px-5 pb-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold text-hive-cyan">HiveGrid OS</h2>
-          <div className="h-px w-16 bg-hive-copper mt-4 mb-5" />
+          <div className="h-px w-16 bg-hive-gold mt-4 mb-5" />
           <p className="text-white/70 text-base md:text-lg mb-8">
             Internal operating platform from partner contract through city or county final approval. Not the software that runs the battery.
           </p>
@@ -280,7 +280,7 @@ export default function HomePage() {
             <div className="grid sm:grid-cols-2 gap-4">
               {MODULES.map((mod) => (
                 <div key={mod.name} className="rounded-2xl p-5 bg-black/25 border border-white/8">
-                  <h3 className={`font-semibold text-hive-cyan mb-1.5`}>{mod.name}</h3>
+                  <h3 className="font-semibold text-hive-cyan mb-1.5">{mod.name}</h3>
                   <p className="text-sm text-white/65">{mod.body}</p>
                 </div>
               ))}
@@ -299,7 +299,7 @@ export default function HomePage() {
       <section id="contact" className="px-5 pb-16">
         <div className="max-w-xl mx-auto text-center">
           <h2 className="text-3xl md:text-5xl font-bold text-hive-cyan">Work with HiveGrid</h2>
-          <div className="h-px w-16 bg-hive-copper mx-auto mt-4 mb-5" />
+          <div className="h-px w-16 bg-hive-gold mx-auto mt-4 mb-5" />
           <p className="text-white/70 mb-2">For strategic partners.</p>
           <p className="text-white/80 mb-8">10221 Paintbrush Dr.<br />Fort Worth, TX 76244</p>
           <form onSubmit={handleSubmit} className="flex flex-col gap-3 text-left">
@@ -312,13 +312,13 @@ export default function HomePage() {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Email"
                     required
-                    className="flex-1 bg-black/30 border border-white/15 rounded-2xl px-5 py-3.5 text-white placeholder:text-white/40 focus:outline-none focus:border-hive-copper"
+                    className="flex-1 bg-black/30 border border-white/15 rounded-2xl px-5 py-3.5 text-white placeholder:text-white/40 focus:outline-none focus:border-hive-gold"
                   />
-                  <button type="submit" disabled={sending} className="bg-hive-copper hover:brightness-110 text-white font-semibold px-8 py-3.5 rounded-2xl disabled:opacity-60">
+                  <button type="submit" disabled={sending} className="bg-hive-gold hover:brightness-110 text-hive-ink font-semibold px-8 py-3.5 rounded-2xl disabled:opacity-60">
                     {sending ? 'Sending…' : 'Contact us'}
                   </button>
                 </div>
-                {sendError && <p className="text-sm text-hive-copper">{sendError}</p>}
+                {sendError && <p className="text-sm text-hive-gold">{sendError}</p>}
               </>
             ) : (
               <div className="py-6 text-center text-hive-cyan font-medium">Thank you. We will be in touch shortly.</div>
@@ -328,13 +328,13 @@ export default function HomePage() {
       </section>
 
       <footer className="border-t border-white/10 py-10 text-center text-sm text-white/50 px-5">
-        <div className="italic text-hive-copper mb-2">“Building Trust Through Transparency”</div>
+        <div className="italic text-white mb-2">“Building Trust Through Transparency”</div>
         <div>10221 Paintbrush Dr., Fort Worth, TX 76244</div>
         <div className="mt-2">© 2026 HiveGrid Energy, LLC · Wyoming LLC · Texas operations</div>
       </footer>
 
       {showBackToTop && (
-        <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-hive-copper text-white" aria-label="Back to top">
+        <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-hive-gold text-hive-ink" aria-label="Back to top">
           ↑
         </button>
       )}

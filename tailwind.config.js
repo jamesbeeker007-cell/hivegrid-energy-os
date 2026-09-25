@@ -7,13 +7,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // 21 Sep 2026 board + working hexes pending review
         'hive-indigo': '#110066',
         'hive-light': '#F7F8FC',
         'hive-blue': '#5B4EFF',
         'hive-cyan': '#00FFFF',
         'hive-yellow': '#FFFF00',
         'hive-copper': '#C45A24',
+        'hive-gold': '#E8A03A',
+        'hive-ink': '#1B3A32',
         'hive-white': '#FFFFFF',
         'hive-base': '#110066',
         'hive-panel': '#1A0A4A',
