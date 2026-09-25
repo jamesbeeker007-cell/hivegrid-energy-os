@@ -1,50 +1,9 @@
 'use client'
 import { useState, useEffect } from 'react'
 
-const STEPS = [
-  {
-    n: '01',
-    title: 'Contract',
-    body: 'Install contract obtained from the battery-owner partner. Sits with HiveGrid Energy, LLC.',
-  },
-  {
-    n: '02',
-    title: 'Site',
-    body: 'Homeowner and site assessment. Battery placement per partner, manufacturer, and jurisdiction.',
-  },
-  {
-    n: '03',
-    title: 'Engineer',
-    body: 'Plans and schematics coordinated. HGE pays the electrical engineer.',
-  },
-  {
-    n: '04',
-    title: 'Permit',
-    body: 'City or county submittal. Permits, parts, insurance, and field labor are HGE costs.',
-  },
-  {
-    n: '05',
-    title: 'Install',
-    body: 'Two-person crew under the Master Electrician named on the Company TDLR license.',
-    hot: true,
-  },
-  {
-    n: '06',
-    title: 'Closeout',
-    body: 'Inspection, remediation if needed, final approval, turnover back to the partner.',
-  },
-]
-
-const MODULES = [
-  { name: 'Brain', body: 'Job management and dispatch. One record per home.' },
-  { name: 'Academy', body: 'Crew training and readiness against the systems we install.' },
-  { name: 'Shield', body: 'License, compliance, and assignment checks before work starts.' },
-  { name: 'Standard', body: 'The installation standard and quality record for every job.' },
-]
-
 function IconConnected() {
   return (
-    <svg viewBox="0 0 64 64" className="h-14 w-14 mx-auto" fill="none">
+    <svg viewBox="0 0 64 64" className="h-12 w-12" fill="none" aria-hidden="true">
       <path d="M32 8 L54 21 L54 43 L32 56 L10 43 L10 21 Z" stroke="#5B4EFF" strokeWidth="2.4" />
       <circle cx="32" cy="32" r="4" fill="#00FFFF" />
       <circle cx="22" cy="38" r="3" fill="#5B4EFF" />
@@ -53,45 +12,92 @@ function IconConnected() {
     </svg>
   )
 }
-function IconReliable() {
+function IconSite() {
   return (
-    <svg viewBox="0 0 64 64" className="h-14 w-14 mx-auto" fill="none">
-      <circle cx="32" cy="32" r="22" stroke="#5B4EFF" strokeWidth="2.4" />
-      <path d="M36 16 L24 34 H33 L27 48 L42 30 H33 Z" fill="#C45A24" />
+    <svg viewBox="0 0 64 64" className="h-12 w-12" fill="none" aria-hidden="true">
+      <path d="M32 8 L54 21 L54 43 L32 56 L10 43 L10 21 Z" stroke="#5B4EFF" strokeWidth="2.4" />
+      <path d="M22 38 L32 22 L42 38 V44 H22 Z" stroke="#00FFFF" strokeWidth="2" />
     </svg>
   )
 }
 function IconPrecision() {
   return (
-    <svg viewBox="0 0 64 64" className="h-14 w-14 mx-auto" fill="none">
+    <svg viewBox="0 0 64 64" className="h-12 w-12" fill="none" aria-hidden="true">
       <path d="M36 12 L22 34 H32 L26 52 L46 28 H34 Z" stroke="#00FFFF" strokeWidth="2.6" strokeLinejoin="round" />
     </svg>
   )
 }
 function IconSafety() {
   return (
-    <svg viewBox="0 0 64 64" className="h-14 w-14 mx-auto" fill="none">
+    <svg viewBox="0 0 64 64" className="h-12 w-12" fill="none" aria-hidden="true">
       <path d="M32 8 L54 21 L54 43 L32 56 L10 43 L10 21 Z" stroke="#00FFFF" strokeWidth="2.4" />
       <circle cx="32" cy="32" r="7" stroke="#5B4EFF" strokeWidth="2" />
       <circle cx="32" cy="32" r="3" fill="#C45A24" />
     </svg>
   )
 }
+function IconReliable() {
+  return (
+    <svg viewBox="0 0 64 64" className="h-12 w-12" fill="none" aria-hidden="true">
+      <circle cx="32" cy="32" r="22" stroke="#5B4EFF" strokeWidth="2.4" />
+      <path d="M36 16 L24 34 H33 L27 48 L42 30 H33 Z" fill="#C45A24" />
+    </svg>
+  )
+}
 function IconPerformance() {
   return (
-    <svg viewBox="0 0 64 64" className="h-14 w-14 mx-auto" fill="none">
+    <svg viewBox="0 0 64 64" className="h-12 w-12" fill="none" aria-hidden="true">
       <path d="M32 8 L54 21 L54 43 L32 56 L10 43 L10 21 Z" stroke="#5B4EFF" strokeWidth="2.4" />
       <path d="M22 40 V32 M32 40 V24 M42 40 V28" stroke="#C45A24" strokeWidth="3.2" strokeLinecap="round" />
     </svg>
   )
 }
 
-const ICONS = [
-  { label: 'Connected Infrastructure', Icon: IconConnected },
-  { label: 'Reliable Energy', Icon: IconReliable },
-  { label: 'Precision Control', Icon: IconPrecision },
-  { label: 'Safety Assured', Icon: IconSafety },
-  { label: 'Performance Optimized', Icon: IconPerformance },
+const STEPS = [
+  {
+    n: '01',
+    title: 'Contract',
+    body: 'Install contract obtained from the battery-owner partner. Sits with HiveGrid Energy, LLC.',
+    Icon: IconConnected,
+  },
+  {
+    n: '02',
+    title: 'Site',
+    body: 'Homeowner and site assessment. Battery placement per partner, manufacturer, and jurisdiction.',
+    Icon: IconSite,
+  },
+  {
+    n: '03',
+    title: 'Engineer',
+    body: 'Plans and schematics coordinated. HGE pays the electrical engineer.',
+    Icon: IconPrecision,
+  },
+  {
+    n: '04',
+    title: 'Permit',
+    body: 'City or county submittal. Permits, parts, insurance, and field labor are HGE costs.',
+    Icon: IconSafety,
+  },
+  {
+    n: '05',
+    title: 'Install',
+    body: 'Two-person crew under the Master Electrician named on the Company TDLR license.',
+    hot: true,
+    Icon: IconReliable,
+  },
+  {
+    n: '06',
+    title: 'Closeout',
+    body: 'Inspection, remediation if needed, final approval, turnover back to the partner.',
+    Icon: IconPerformance,
+  },
+]
+
+const MODULES = [
+  { name: 'Brain', body: 'Job management and dispatch. One record per home.' },
+  { name: 'Academy', body: 'Crew training and readiness against the systems we install.' },
+  { name: 'Shield', body: 'License, compliance, and assignment checks before work starts.' },
+  { name: 'Standard', body: 'The installation standard and quality record for every job.' },
 ]
 
 export default function HomePage() {
@@ -183,31 +189,14 @@ export default function HomePage() {
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight mb-6 leading-[0.95] text-hive-cyan">
             One crew.<br />One home.<br />One standard.
           </h1>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto mb-4">
+          <p className="text-lg md:text-xl max-w-2xl mx-auto mb-12">
             <span className="italic text-white">“Building Trust Through Transparency”</span>
           </p>
-          <p className="text-white/60 text-sm md:text-base max-w-xl mx-auto mb-12">
-            Channel partners are the face of the asset.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <div className="flex justify-center">
             <a href="#how-it-works" className="bg-hive-cyan text-hive-indigo hover:brightness-110 font-semibold px-10 py-4 rounded-2xl">
               Start to finish
             </a>
-            <a href="#contact" className="bg-hive-gold hover:brightness-110 font-semibold px-10 py-4 rounded-2xl text-hive-ink">
-              For partners
-            </a>
           </div>
-        </div>
-      </section>
-
-      <section className="px-5 pb-16">
-        <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
-          {ICONS.map(({ label, Icon }) => (
-            <div key={label} className="hive-card border border-white/10 rounded-3xl px-3 py-6 text-center">
-              <Icon />
-              <div className="mt-4 text-[11px] font-semibold tracking-[0.14em] uppercase text-white/75 leading-snug">{label}</div>
-            </div>
-          ))}
         </div>
       </section>
 
@@ -252,8 +241,11 @@ export default function HomePage() {
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {STEPS.map((step) => (
-              <div key={step.n} className="hive-card border border-white/10 rounded-3xl p-7 min-h-[220px]">
-                <div className={`inline-flex text-[11px] font-semibold tracking-[0.2em] uppercase px-3 py-1 rounded-full mb-5 ${
+              <div key={step.n} className="hive-card border border-white/10 rounded-3xl p-7 min-h-[240px]">
+                <div className="mb-5">
+                  <step.Icon />
+                </div>
+                <div className={`inline-flex text-[11px] font-semibold tracking-[0.2em] uppercase px-3 py-1 rounded-full mb-4 ${
                   step.hot ? 'bg-hive-gold/20 text-hive-gold' : 'bg-white/5 text-hive-cyan'
                 }`}>
                   {step.n} {step.title}
@@ -286,13 +278,6 @@ export default function HomePage() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="px-5 pb-16">
-        <div className="max-w-4xl mx-auto text-center hive-card border border-white/10 rounded-3xl py-10 px-6">
-          <p className="text-lg md:text-xl text-white/85">Channel partners are the face of the asset.</p>
-          <p className="text-sm text-white/50 mt-3">HiveGrid Energy does the work on the home. No partner marks on this page until a partner asks to be named.</p>
         </div>
       </section>
 
