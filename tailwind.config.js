@@ -26,7 +26,7 @@ module.exports = {
         'hive-amber': '#FFFF00',
       },
       fontFamily: {
-        'space-grotesk': ['Space Grotesk', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
       },
     },
   },
