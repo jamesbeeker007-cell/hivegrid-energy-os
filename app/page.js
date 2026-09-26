@@ -203,6 +203,9 @@ export default function HomePage() {
       <section id="about" className="px-5 pb-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold text-hive-cyan">What HiveGrid actually is</h2>
+          <p className="text-white/70 text-base md:text-lg mt-4 max-w-3xl">
+            The work from partner handoff through city or county closeout.
+          </p>
           <div className="h-px w-16 bg-hive-gold mt-4 mb-8" />
           <div className="hive-card border border-white/10 rounded-3xl p-6 md:p-10 space-y-5 text-base md:text-lg leading-relaxed text-white/85">
             <p>
@@ -234,7 +237,7 @@ export default function HomePage() {
 
       <section id="how-it-works" className="px-5 pb-16">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold text-hive-cyan">Start to finish</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-hive-cyan">The HiveGrid Installation Standard</h2>
           <div className="h-px w-16 bg-hive-gold mt-4 mb-5" />
           <p className="text-white/70 text-base md:text-lg max-w-3xl mb-10">
             The unit of work is partner contract through city or county closeout. Partner pays HGE. HGE pays the field costs.
