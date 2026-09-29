@@ -1,7 +1,7 @@
 {
   "name": "hivegrid-energy-os",
   "version": "1.0.0",
-  "description": "HiveGrid Energy OS - Distributed VPP Platform",
+  "description": "HiveGrid Energy - residential battery installation operations and HiveGrid OS",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

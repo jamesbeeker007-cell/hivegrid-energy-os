@@ -295,7 +295,7 @@ export default function HomePage() {
           <p className="italic text-white mt-4">{MOTTO}</p>
           <div className="h-px w-16 bg-hive-gold mx-auto mt-4 mb-5" />
           <p className="text-white/70 mb-2">Have contracted residential battery installations that need an execution path?</p>
-          <p className="text-white/80 mb-8">10221 Paintbrush Dr.<br />Fort Worth, TX 76244</p>
+          <p className="text-white/80 mb-8">Fort Worth, Texas<br /><span className="text-white/60">hivegridenergy.com</span></p>
           <form onSubmit={handleSubmit} className="flex flex-col gap-3 text-left">
             {!submitted ? (
               <>
@@ -323,7 +323,7 @@ export default function HomePage() {
 
       <footer className="border-t border-white/10 py-10 text-center text-sm text-white/50 px-5">
         <div className="italic text-white mb-2">{MOTTO}</div>
-        <div>10221 Paintbrush Dr., Fort Worth, TX 76244</div>
+        <div>Fort Worth, Texas · hivegridenergy.com</div>
         <div className="mt-2">© 2026 HiveGrid Energy, LLC · Wyoming LLC · Texas operations</div>
       </footer>
 
