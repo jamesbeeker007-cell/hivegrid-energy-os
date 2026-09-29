@@ -164,8 +164,8 @@ export default function HomePage() {
             <span className="italic text-white">{MOTTO}</span>
           </p>
           <div className="flex justify-center">
-            <a href="#how-it-works" className="bg-hive-cyan text-hive-indigo hover:brightness-110 font-semibold px-10 py-4 rounded-2xl">
-              Start to finish
+            <a href="#how-it-works" className="bg-hive-gold text-hive-ink hover:brightness-110 font-semibold px-10 py-4 rounded-2xl border border-hive-gold shadow-[0_0_0_1px_rgba(232,160,58,0.12)]">
+              See How It Works
             </a>
           </div>
         </div>
