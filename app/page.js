@@ -64,6 +64,8 @@ const STEPS = [
 
 const COORDINATES = ['Site planning', 'Engineering', 'Permitting', 'Electrical installation', 'Inspection', 'Corrections when required', 'Project administration', 'Closeout']
 const IS_NOT = ['The battery manufacturer', 'Battery-control software', 'A VPP platform']
+const CHAIN = 'Site information → Engineering → Permit → Qualified installation → Inspection → Closeout'
+const MOTTO = '“Building Trust Through Transparency”'
 
 const DISCIPLINES = [
   { name: 'The Brain', line: 'Coordinates the work.', body: 'What needs to happen. What has been completed. Who owns the next action. What is preventing advancement.' },
@@ -131,7 +133,7 @@ export default function HomePage() {
             <a href="/portal" className="hover:text-hive-cyan">Portal</a>
           </div>
           <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-hive-cyan text-3xl leading-none" aria-label="Toggle menu">
-            {isMenuOpen ? '\u2715' : '\u2630'}
+            {isMenuOpen ? '✕' : '☰'}
           </button>
         </div>
         {isMenuOpen && (
@@ -159,7 +161,7 @@ export default function HomePage() {
             One crew.<br />One home.<br />One standard.
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto mb-12">
-            <span className="italic text-white">\u201cBuilding Trust Through Transparency\u201d</span>
+            <span className="italic text-white">{MOTTO}</span>
           </p>
           <div className="flex justify-center">
             <a href="#how-it-works" className="bg-hive-cyan text-hive-indigo hover:brightness-110 font-semibold px-10 py-4 rounded-2xl">
@@ -177,9 +179,7 @@ export default function HomePage() {
             <p>
               Battery-owner and channel partners may already have homeowner contracts and available equipment. Between that contract and a completed installation lies an operational chain.
             </p>
-            <p className="text-white">
-              Site information \u2192 Engineering \u2192 Permit \u2192 Qualified installation \u2192 Inspection \u2192 Closeout
-            </p>
+            <p className="text-white">{CHAIN}</p>
             <p>
               Each project has requirements that must be satisfied before it can move forward. HiveGrid is built around managing that execution.
             </p>
@@ -248,7 +248,7 @@ export default function HomePage() {
           </p>
           <div className="hive-card border border-white/10 rounded-3xl p-6 md:p-10">
             <p className="text-white/80 mb-8 leading-relaxed">
-              The right person. The right information. The right authority. Brain, Academy, Shield, and Standard are one operating model \u2014 not four separate products.
+              The right person. The right information. The right authority. Brain, Academy, Shield, and Standard are one operating model — not four separate products.
             </p>
             <div className="grid sm:grid-cols-2 gap-4">
               {DISCIPLINES.map((mod) => (
@@ -269,10 +269,10 @@ export default function HomePage() {
           <div className="h-px w-16 bg-hive-gold mt-4 mb-8" />
           <div className="hive-card border border-white/10 rounded-3xl p-6 md:p-10 space-y-5 text-white/80 leading-relaxed">
             <p>
-              Initial installations are intended to validate the process \u2014 workflow, documentation, engineering coordination, permitting, field execution, inspection, correction handling, and closeout.
+              Initial installations are intended to validate the process — workflow, documentation, engineering coordination, permitting, field execution, inspection, correction handling, and closeout.
             </p>
             <p className="text-white">Learn. Document. Improve. Repeat.</p>
-            <p className="italic">\u201cBuilding Trust Through Transparency\u201d</p>
+            <p className="italic">{MOTTO}</p>
             <p>
               Transparency does not mean everyone sees everything. It means appropriate visibility for the responsibility someone holds.
             </p>
@@ -283,16 +283,16 @@ export default function HomePage() {
       <section className="px-5 pb-16">
         <div className="max-w-4xl mx-auto text-center hive-card border border-white/10 rounded-3xl py-10 px-6">
           <h2 className="text-2xl md:text-4xl font-bold text-white">You own the battery relationship. HiveGrid manages the installation path.</h2>
-          <p className="text-white/70 mt-4">Partner contract \u2192 handoff \u2192 HiveGrid installation lifecycle \u2192 closeout \u2192 partner.</p>
+          <p className="text-white/70 mt-4">Partner contract → handoff → HiveGrid installation lifecycle → closeout → partner.</p>
           <p className="text-white/60 mt-4">Current operating focus is Texas / ERCOT. Depth before geography.</p>
-          <a href="#contact" className="inline-block mt-8 text-hive-gold font-semibold">Discuss partner capacity \u2192</a>
+          <a href="#contact" className="inline-block mt-8 text-hive-gold font-semibold">Discuss partner capacity →</a>
         </div>
       </section>
 
       <section id="contact" className="px-5 pb-16">
         <div className="max-w-xl mx-auto text-center">
           <h2 className="text-3xl md:text-5xl font-bold text-hive-cyan">One crew. One home. One standard.</h2>
-          <p className="italic text-white mt-4">\u201cBuilding Trust Through Transparency\u201d</p>
+          <p className="italic text-white mt-4">{MOTTO}</p>
           <div className="h-px w-16 bg-hive-gold mx-auto mt-4 mb-5" />
           <p className="text-white/70 mb-2">Have contracted residential battery installations that need an execution path?</p>
           <p className="text-white/80 mb-8">10221 Paintbrush Dr.<br />Fort Worth, TX 76244</p>
@@ -309,7 +309,7 @@ export default function HomePage() {
                     className="flex-1 bg-black/30 border border-white/15 rounded-2xl px-5 py-3.5 text-white placeholder:text-white/40 focus:outline-none focus:border-hive-gold"
                   />
                   <button type="submit" disabled={sending} className="bg-hive-gold hover:brightness-110 text-hive-ink font-semibold px-8 py-3.5 rounded-2xl disabled:opacity-60">
-                    {sending ? 'Sending\u2026' : 'Contact us'}
+                    {sending ? 'Sending…' : 'Contact us'}
                   </button>
                 </div>
                 {sendError && <p className="text-sm text-hive-gold">{sendError}</p>}
@@ -322,14 +322,14 @@ export default function HomePage() {
       </section>
 
       <footer className="border-t border-white/10 py-10 text-center text-sm text-white/50 px-5">
-        <div className="italic text-white mb-2">\u201cBuilding Trust Through Transparency\u201d</div>
+        <div className="italic text-white mb-2">{MOTTO}</div>
         <div>10221 Paintbrush Dr., Fort Worth, TX 76244</div>
-        <div className="mt-2">\u00a9 2026 HiveGrid Energy, LLC \u00b7 Wyoming LLC \u00b7 Texas operations</div>
+        <div className="mt-2">© 2026 HiveGrid Energy, LLC · Wyoming LLC · Texas operations</div>
       </footer>
 
       {showBackToTop && (
         <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-hive-gold text-hive-ink" aria-label="Back to top">
-          \u2191
+          ↑
         </button>
       )}
     </main>
