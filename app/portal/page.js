@@ -139,7 +139,7 @@ export default function HiveGridOSPortal() {
           <button type="submit" className="w-full bg-hive-blue hover:brightness-110 text-white font-semibold py-3.5 rounded-2xl">
             Enter
           </button>
-          <a href="/" className="block text-center text-sm text-white/40 mt-6 hover:text-white/70">
+          <a href="/" className="block text-center text-sm text-white/70 mt-6 hover:text-white">
             Back to HiveGrid Energy
           </a>
         </form>
@@ -149,7 +149,7 @@ export default function HiveGridOSPortal() {
 
   return (
     <main id="main-content" tabIndex={-1} className="min-h-screen bg-hive-base text-white">
-      <div className="bg-hive-copper text-white text-center text-xs sm:text-sm py-2 px-4">
+      <div className="bg-hive-base border-b border-hive-copper text-white text-center text-xs sm:text-sm py-2 px-4">
         Phase One demonstration. Sample jobs only. Nothing entered here is saved. Protected login comes when live work starts.
       </div>
       <div className="border-b border-white/10 bg-hive-base/95 backdrop-blur-md sticky top-0 z-50">

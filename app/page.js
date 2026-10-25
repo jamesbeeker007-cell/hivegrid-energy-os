@@ -297,6 +297,7 @@ export default function HomePage() {
           <div className="h-px w-16 bg-hive-gold mx-auto mt-4 mb-5" />
           <p className="text-white/70 mb-2">Have contracted residential battery installations that need an execution path?</p>
           <p className="text-white/80 mb-8">Fort Worth, Texas<br /><span className="text-white/60">hivegridenergy.com</span></p>
+          <p className="mb-6 text-white/80">Or email <a href="mailto:sandram@hivegridenergy.com" className="text-hive-cyan underline underline-offset-4">sandram@hivegridenergy.com</a> directly.</p>
           <form aria-busy={sending} onSubmit={handleSubmit} className="flex flex-col gap-3 text-left">
             {!submitted ? (
               <>
