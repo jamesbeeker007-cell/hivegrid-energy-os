@@ -76,6 +76,8 @@ const DISCIPLINES = [
 
 export default function HomePage() {
   const [email, setEmail] = useState('')
+  const [name, setName] = useState('')
+  const [message, setMessage] = useState('')
   const [submitted, setSubmitted] = useState(false)
   const [sending, setSending] = useState(false)
   const [sendError, setSendError] = useState('')
@@ -84,7 +86,7 @@ export default function HomePage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    if (sending || submitted || !email.trim()) return
+    if (sending || submitted || !email.trim() || !message.trim()) return
     setSending(true)
     setSendError('')
     try {
@@ -92,7 +94,9 @@ export default function HomePage() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
+          name: name.trim(),
           email: email.trim(),
+          message: message.trim(),
           _subject: 'HiveGrid Energy website contact',
           source: 'hivegrid-energy-os landing page',
         }),
@@ -295,30 +299,22 @@ export default function HomePage() {
           <h2 className="text-3xl md:text-5xl font-bold text-hive-cyan">One crew. One home. One standard.</h2>
           <p className="italic text-white mt-4">{MOTTO}</p>
           <div className="h-px w-16 bg-hive-gold mx-auto mt-4 mb-5" />
-          <p className="text-white/70 mb-2">Have contracted residential battery installations that need an execution path?</p>
+          <p className="text-white/70 mb-2">We’d love to hear from you. Have a question or a project in mind? Tell us a little about it below, or email us directly.</p>
           <p className="text-white/80 mb-8">Fort Worth, Texas<br /><span className="text-white/60">hivegridenergy.com</span></p>
           <p className="mb-6 text-white/80">Or email <a href="mailto:sandram@hivegridenergy.com" className="text-hive-cyan underline underline-offset-4">sandram@hivegridenergy.com</a> directly.</p>
           <form aria-busy={sending} onSubmit={handleSubmit} className="flex flex-col gap-3 text-left">
             {!submitted ? (
               <>
+                <label htmlFor="contact-name" className="text-sm text-white">Name (optional)</label>
+                <input id="contact-name" name="name" autoComplete="name" value={name} onChange={(e) => setName(e.target.value)} maxLength={150} className="w-full bg-black/30 border border-white/15 rounded-2xl px-5 py-3.5 text-white focus:border-hive-gold" />
                 <label htmlFor="contact-email" className="text-sm text-white">Email address</label>
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <input
-                    id="contact-email"
-                    name="email"
-                    autoComplete="email"
-                    aria-describedby={sendError ? 'contact-error' : undefined}
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Email"
-                    required
-                    className="flex-1 bg-black/30 border border-white/15 rounded-2xl px-5 py-3.5 text-white placeholder:text-white/40 focus:outline-none focus:border-hive-gold"
-                  />
-                  <button type="submit" disabled={sending} className="bg-hive-gold hover:brightness-110 text-hive-ink font-semibold px-8 py-3.5 rounded-2xl disabled:opacity-60">
-                    {sending ? 'Sending…' : 'Contact us'}
-                  </button>
-                </div>
+                <input id="contact-email" name="email" autoComplete="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required maxLength={254} aria-describedby={sendError ? 'contact-error' : undefined} className="w-full bg-black/30 border border-white/15 rounded-2xl px-5 py-3.5 text-white focus:border-hive-gold" />
+                <label htmlFor="contact-message" className="text-sm text-white">How can we help?</label>
+                <textarea id="contact-message" name="message" value={message} onChange={(e) => setMessage(e.target.value)} required maxLength={5000} rows={4} aria-describedby="contact-message-help" className="w-full bg-black/30 border border-white/15 rounded-2xl px-5 py-3.5 text-white focus:border-hive-gold" />
+                <p id="contact-message-help" className="text-sm text-white/70">Share your question or a brief overview of your project.</p>
+                <button type="submit" disabled={sending} className="bg-hive-gold hover:brightness-110 text-hive-ink font-semibold px-8 py-3.5 rounded-2xl disabled:opacity-60">
+                  {sending ? 'Sending…' : 'Send message'}
+                </button>
                 <p id="contact-error" role="alert" className="text-sm text-hive-gold">{sendError}</p>
               </>
             ) : (
