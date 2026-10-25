@@ -132,12 +132,12 @@ export default function HomePage() {
             <a href="#contact" className="hover:text-hive-gold">Contact</a>
             <a href="/portal" className="hover:text-hive-cyan">Portal</a>
           </div>
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-hive-cyan text-3xl leading-none" aria-label="Toggle menu">
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-hive-cyan text-3xl leading-none" aria-label="Toggle menu" aria-expanded={isMenuOpen} aria-controls="hive-mobile-menu">
             {isMenuOpen ? '✕' : '☰'}
           </button>
         </div>
         {isMenuOpen && (
-          <div className="md:hidden mt-3">
+          <div id="hive-mobile-menu" className="md:hidden mt-3">
             <div className="flex flex-col gap-3 text-sm hive-card border border-white/10 rounded-2xl p-4">
               <a href="#about" onClick={closeMenu} className="text-hive-cyan">About</a>
               <a href="#how-it-works" onClick={closeMenu} className="text-hive-gold">How It Works</a>
@@ -322,9 +322,8 @@ export default function HomePage() {
       </section>
 
       <footer className="border-t border-white/10 py-10 text-center text-sm text-white/50 px-5">
-        <div className="italic text-white mb-2">{MOTTO}</div>
-        <div>Fort Worth, Texas · hivegridenergy.com</div>
-        <div className="mt-2">© 2026 HiveGrid Energy, LLC · Wyoming LLC · Texas operations</div>
+        <div>© 2026 HiveGrid Energy LLC. All rights reserved.</div>
+        <div className="italic text-white mt-2">{MOTTO}</div>
       </footer>
 
       {showBackToTop && (
