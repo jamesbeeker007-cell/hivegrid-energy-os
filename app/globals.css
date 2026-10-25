@@ -50,3 +50,8 @@ body {
 .hive-mark-live {
   animation: hiveBolt 5.5s ease-in-out infinite;
 }
+
+/* Respect system accessibility settings while preserving the existing 5.5s brand pulse. */
+@media (prefers-reduced-motion: reduce) {
+  .hive-watermark img, .hive-mark-live { animation: none; }
+}
