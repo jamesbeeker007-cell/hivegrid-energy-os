@@ -18,8 +18,10 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="min-h-screen bg-hive-indigo text-white antialiased font-sans">
+        <a href="#main-content" className="skip-link">Skip to main content</a>
         {children}
       </body>
     </html>
   )
 }
+

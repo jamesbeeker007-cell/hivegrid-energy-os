@@ -121,18 +121,21 @@ export default function HiveGridOSPortal() {
 
   if (!unlocked) {
     return (
-      <div className="min-h-screen bg-hive-base text-white flex items-center justify-center px-6">
+      <main id="main-content" tabIndex={-1} className="min-h-screen bg-hive-base text-white flex items-center justify-center px-6">
         <form onSubmit={handleUnlock} className="w-full max-w-md bg-hive-panel border border-white/10 rounded-3xl p-8">
           <h1 className="text-2xl font-bold tracking-tight mb-1">HiveGrid OS</h1>
           <p className="text-sm text-white/60 mb-6">Access code required. This is not a public tool.</p>
+          <label htmlFor="portal-code" className="block text-sm mb-2">Access code</label>
           <input
+            id="portal-code"
+            autoComplete="off"
             type="password"
             value={pass}
             onChange={(e) => setPass(e.target.value)}
             placeholder="Access code"
             className="w-full bg-hive-base border border-white/20 rounded-2xl px-5 py-3.5 mb-4 focus:outline-none focus:border-hive-cyan text-white"
           />
-          {error && <p className="text-sm text-hive-copper mb-4">{error}</p>}
+          <p role="alert" className="text-sm text-white mb-4">{error}</p>
           <button type="submit" className="w-full bg-hive-blue hover:brightness-110 text-white font-semibold py-3.5 rounded-2xl">
             Enter
           </button>
@@ -140,12 +143,12 @@ export default function HiveGridOSPortal() {
             Back to HiveGrid Energy
           </a>
         </form>
-      </div>
+      </main>
     )
   }
 
   return (
-    <div className="min-h-screen bg-hive-base text-white">
+    <main id="main-content" tabIndex={-1} className="min-h-screen bg-hive-base text-white">
       <div className="bg-hive-copper text-white text-center text-xs sm:text-sm py-2 px-4">
         Phase One demonstration. Sample jobs only. Nothing entered here is saved. Protected login comes when live work starts.
       </div>
@@ -188,15 +191,15 @@ export default function HiveGridOSPortal() {
             <div className="bg-hive-panel rounded-3xl p-8 mb-10">
               <h3 className="text-xl font-semibold mb-6">Add a sample job</h3>
               <form onSubmit={handleCreateJob} className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input type="text" placeholder="Property address *" value={newJob.address} onChange={(e) => setNewJob({ ...newJob, address: e.target.value })} className="bg-hive-base border border-white/20 rounded-2xl px-5 py-3.5 text-sm" required />
-                <input type="text" placeholder="Homeowner (sample) *" value={newJob.homeowner} onChange={(e) => setNewJob({ ...newJob, homeowner: e.target.value })} className="bg-hive-base border border-white/20 rounded-2xl px-5 py-3.5 text-sm" required />
-                <input type="text" placeholder="City" value={newJob.city} onChange={(e) => setNewJob({ ...newJob, city: e.target.value })} className="bg-hive-base border border-white/20 rounded-2xl px-5 py-3.5 text-sm" />
-                <input type="text" placeholder="County" value={newJob.county} onChange={(e) => setNewJob({ ...newJob, county: e.target.value })} className="bg-hive-base border border-white/20 rounded-2xl px-5 py-3.5 text-sm" />
-                <select value={newJob.batteryType} onChange={(e) => setNewJob({ ...newJob, batteryType: e.target.value })} className="bg-hive-base border border-white/20 rounded-2xl px-5 py-3.5 text-sm">
+                <input type="text" aria-label="Property address *" placeholder="Property address *" value={newJob.address} onChange={(e) => setNewJob({ ...newJob, address: e.target.value })} className="bg-hive-base border border-white/20 rounded-2xl px-5 py-3.5 text-sm" required />
+                <input type="text" aria-label="Homeowner (sample) *" placeholder="Homeowner (sample) *" value={newJob.homeowner} onChange={(e) => setNewJob({ ...newJob, homeowner: e.target.value })} className="bg-hive-base border border-white/20 rounded-2xl px-5 py-3.5 text-sm" required />
+                <input type="text" aria-label="City" placeholder="City" value={newJob.city} onChange={(e) => setNewJob({ ...newJob, city: e.target.value })} className="bg-hive-base border border-white/20 rounded-2xl px-5 py-3.5 text-sm" />
+                <input type="text" aria-label="County" placeholder="County" value={newJob.county} onChange={(e) => setNewJob({ ...newJob, county: e.target.value })} className="bg-hive-base border border-white/20 rounded-2xl px-5 py-3.5 text-sm" />
+                <select aria-label="Battery type" value={newJob.batteryType} onChange={(e) => setNewJob({ ...newJob, batteryType: e.target.value })} className="bg-hive-base border border-white/20 rounded-2xl px-5 py-3.5 text-sm">
                   <option value="Partner battery">Partner battery</option>
                   <option value="Partner battery B">Partner battery B</option>
                 </select>
-                <input type="text" placeholder="Assign to crew (optional)" value={newJob.assignedTo} onChange={(e) => setNewJob({ ...newJob, assignedTo: e.target.value })} className="bg-hive-base border border-white/20 rounded-2xl px-5 py-3.5 text-sm" />
+                <input type="text" aria-label="Assign to crew (optional)" placeholder="Assign to crew (optional)" value={newJob.assignedTo} onChange={(e) => setNewJob({ ...newJob, assignedTo: e.target.value })} className="bg-hive-base border border-white/20 rounded-2xl px-5 py-3.5 text-sm" />
                 <button type="submit" className="md:col-span-2 mt-2 bg-hive-blue hover:brightness-110 text-white font-semibold py-4 rounded-2xl">
                   Add sample job
                 </button>
@@ -213,7 +216,7 @@ export default function HiveGridOSPortal() {
                       <div className="text-sm text-white/60 mt-1">{job.city} {job.county ? `· ${job.county}` : ''} · {job.batteryType}</div>
                     </div>
                     <div className="flex flex-col items-end gap-2">
-                      <select value={job.status} onChange={(e) => updateJob(job.id, 'status', e.target.value)} className="bg-hive-base border border-white/20 rounded-xl px-4 py-1.5 text-sm">
+                      <select aria-label={`Status for ${job.address}`} value={job.status} onChange={(e) => updateJob(job.id, 'status', e.target.value)} className="bg-hive-base border border-white/20 rounded-xl px-4 py-1.5 text-sm">
                         {STATUSES.map((s) => (
                           <option key={s}>{s}</option>
                         ))}
@@ -221,7 +224,7 @@ export default function HiveGridOSPortal() {
                       <div className="text-xs text-white/50">Crew: {job.assignedTo || 'Unassigned'}</div>
                     </div>
                   </div>
-                  <textarea value={job.notes} onChange={(e) => updateJob(job.id, 'notes', e.target.value)} placeholder="Notes (not saved)" className="w-full mt-4 bg-hive-base border border-white/20 rounded-2xl p-4 text-sm" rows={2} />
+                  <textarea aria-label={`Notes for ${job.address}`} value={job.notes} onChange={(e) => updateJob(job.id, 'notes', e.target.value)} placeholder="Notes (not saved)" className="w-full mt-4 bg-hive-base border border-white/20 rounded-2xl p-4 text-sm" rows={2} />
                 </div>
               ))}
             </div>
@@ -237,18 +240,19 @@ export default function HiveGridOSPortal() {
                   <div className="font-semibold text-xl">{job.address}</div>
                   <div className="text-white/70 mt-1">{job.homeowner}</div>
                   <div className="text-sm text-white/60 mt-1 mb-4">{job.city} · {job.batteryType}</div>
-                  <select value={job.status} onChange={(e) => updateJob(job.id, 'status', e.target.value)} className="bg-hive-base border border-white/20 rounded-xl px-4 py-2 text-sm mb-4">
+                  <select aria-label={`Status for ${job.address}`} value={job.status} onChange={(e) => updateJob(job.id, 'status', e.target.value)} className="bg-hive-base border border-white/20 rounded-xl px-4 py-2 text-sm mb-4">
                     {STATUSES.map((s) => (
                       <option key={s}>{s}</option>
                     ))}
                   </select>
-                  <textarea value={job.notes} onChange={(e) => updateJob(job.id, 'notes', e.target.value)} placeholder="Notes (not saved)" className="w-full bg-hive-base border border-white/20 rounded-2xl p-4 text-sm" rows={3} />
+                  <textarea aria-label={`Notes for ${job.address}`} value={job.notes} onChange={(e) => updateJob(job.id, 'notes', e.target.value)} placeholder="Notes (not saved)" className="w-full bg-hive-base border border-white/20 rounded-2xl p-4 text-sm" rows={3} />
                 </div>
               ))}
             </div>
           </div>
         )}
       </div>
-    </div>
+    </main>
   )
 }
+

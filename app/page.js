@@ -84,7 +84,7 @@ export default function HomePage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    if (!email.trim()) return
+    if (sending || submitted || !email.trim()) return
     setSending(true)
     setSendError('')
     try {
@@ -92,12 +92,15 @@ export default function HomePage() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
-          email,
+          email: email.trim(),
           _subject: 'HiveGrid Energy website contact',
           source: 'hivegrid-energy-os landing page',
         }),
       })
-      if (!res.ok) throw new Error('send failed')
+      const result = await res.json()
+      if (!res.ok || (result.success !== true && result.success !== 'true')) {
+        throw new Error('send failed')
+      }
       setSubmitted(true)
     } catch (err) {
       setSendError('Could not send just now. Email sandram@hivegridenergy.com directly.')
@@ -132,12 +135,11 @@ export default function HomePage() {
             <a href="#contact" className="hover:text-hive-gold">Contact</a>
             <a href="/portal" className="hover:text-hive-cyan">Portal</a>
           </div>
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-hive-cyan text-3xl leading-none" aria-label="Toggle menu" aria-expanded={isMenuOpen} aria-controls="hive-mobile-menu">
+          <button id="mobile-menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-hive-cyan text-3xl leading-none" aria-label={isMenuOpen ? 'Close menu' : 'Open menu'} onKeyDown={(e) => { if (e.key === 'Escape') closeMenu() }} aria-expanded={isMenuOpen} aria-controls="hive-mobile-menu">
             {isMenuOpen ? '✕' : '☰'}
           </button>
         </div>
-        {isMenuOpen && (
-          <div id="hive-mobile-menu" className="md:hidden mt-3">
+        <div id="hive-mobile-menu" hidden={!isMenuOpen} onKeyDown={(e) => { if (e.key === 'Escape') { closeMenu(); document.getElementById('mobile-menu-toggle')?.focus() } }} className="md:hidden mt-3">
             <div className="flex flex-col gap-3 text-sm hive-card border border-white/10 rounded-2xl p-4">
               <a href="#about" onClick={closeMenu} className="text-hive-cyan">About</a>
               <a href="#how-it-works" onClick={closeMenu} className="text-hive-gold">How It Works</a>
@@ -146,10 +148,9 @@ export default function HomePage() {
               <a href="/portal" onClick={closeMenu} className="text-hive-cyan">Portal</a>
             </div>
           </div>
-        )}
       </nav>
 
-      <section className="relative px-5 pt-20 pb-16 md:pt-28 md:pb-20">
+      <section id="main-content" tabIndex={-1} className="relative px-5 pt-20 pb-16 md:pt-28 md:pb-20">
         <div className="hive-watermark">
           <img src="/images/hivegrid-hexagon-approved.svg" alt="" />
         </div>
@@ -296,11 +297,16 @@ export default function HomePage() {
           <div className="h-px w-16 bg-hive-gold mx-auto mt-4 mb-5" />
           <p className="text-white/70 mb-2">Have contracted residential battery installations that need an execution path?</p>
           <p className="text-white/80 mb-8">Fort Worth, Texas<br /><span className="text-white/60">hivegridenergy.com</span></p>
-          <form onSubmit={handleSubmit} className="flex flex-col gap-3 text-left">
+          <form aria-busy={sending} onSubmit={handleSubmit} className="flex flex-col gap-3 text-left">
             {!submitted ? (
               <>
+                <label htmlFor="contact-email" className="text-sm text-white">Email address</label>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <input
+                    id="contact-email"
+                    name="email"
+                    autoComplete="email"
+                    aria-describedby={sendError ? 'contact-error' : undefined}
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -312,12 +318,13 @@ export default function HomePage() {
                     {sending ? 'Sending…' : 'Contact us'}
                   </button>
                 </div>
-                {sendError && <p className="text-sm text-hive-gold">{sendError}</p>}
+                <p id="contact-error" role="alert" className="text-sm text-hive-gold">{sendError}</p>
               </>
             ) : (
               <div className="py-6 text-center text-hive-cyan font-medium">Thank you. We will be in touch shortly.</div>
             )}
           </form>
+          <p role="status" aria-live="polite" className="sr-only">{submitted ? 'Your contact request was accepted.' : sending ? 'Sending your contact request.' : ''}</p>
         </div>
       </section>
 
@@ -327,10 +334,11 @@ export default function HomePage() {
       </footer>
 
       {showBackToTop && (
-        <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-hive-gold text-hive-ink" aria-label="Back to top">
+        <button onClick={() => window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' })} className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-hive-gold text-hive-ink" aria-label="Back to top">
           ↑
         </button>
       )}
     </main>
   )
 }
+

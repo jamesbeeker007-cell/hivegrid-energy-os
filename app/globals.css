@@ -55,3 +55,18 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .hive-watermark img, .hive-mark-live { animation: none; }
 }
+
+
+/* Phase 3 keyboard access and reduced-motion support. */
+:where(a, button, input, select, textarea):focus-visible {
+  outline: 3px solid #00FFFF;
+  outline-offset: 4px;
+}
+[hidden] { display: none !important; }
+section[id] { scroll-margin-top: 7rem; }
+.skip-link { position: fixed; top: 0.5rem; left: 0.5rem; z-index: 100; transform: translateY(-200%); padding: 0.75rem 1rem; background: #07002E; color: #FFFFFF; }
+.skip-link:focus { transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+  .hive-card { transition: none; }
+  .hive-card:hover { transform: none; }
+}

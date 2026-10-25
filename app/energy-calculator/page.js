@@ -1,6 +1,6 @@
 export default function EnergyCalculatorPage() {
   return (
-    <main className="min-h-screen bg-hive-base text-white flex items-center justify-center px-6">
+    <main id="main-content" tabIndex={-1} className="min-h-screen bg-hive-base text-white flex items-center justify-center px-6">
       <section className="w-full max-w-2xl text-center hive-card border border-white/10 rounded-3xl p-8 md:p-12">
         <img src="/images/logo-icon.svg" alt="HiveGrid Energy" className="h-16 w-16 mx-auto mb-6" />
         <div className="text-xs tracking-[0.18em] uppercase text-hive-cyan mb-4">Archived concept</div>
@@ -18,3 +18,4 @@ export default function EnergyCalculatorPage() {
     </main>
   )
 }
+
