@@ -119,7 +119,7 @@ export default function HomePage() {
       <nav className="w-full bg-[#07002E]/85 backdrop-blur-md border-b border-white/10 sticky top-0 z-50 px-4 py-3">
         <div className="max-w-6xl mx-auto flex justify-between items-center gap-3">
           <a href="/" className="flex items-center gap-3 min-w-0">
-            <img src="/images/logo-icon.svg" alt="HiveGrid Energy" className="h-14 w-14 sm:h-16 sm:w-16 shrink-0 hive-mark-live" />
+            <img src="/images/hivegrid-hexagon-approved.svg" alt="HiveGrid Energy" className="h-14 w-14 sm:h-16 sm:w-16 shrink-0 hive-mark-live" />
             <div className="leading-none">
               <div className="text-2xl sm:text-3xl font-bold tracking-tight text-white">HiveGrid</div>
               <div className="text-[11px] sm:text-xs text-hive-cyan tracking-[0.32em] font-semibold mt-1">ENERGY</div>
@@ -151,7 +151,7 @@ export default function HomePage() {
 
       <section className="relative px-5 pt-20 pb-16 md:pt-28 md:pb-20">
         <div className="hive-watermark">
-          <img src="/images/logo-icon.svg" alt="" />
+          <img src="/images/hivegrid-hexagon-approved.svg" alt="" />
         </div>
         <div className="relative max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 border border-white/15 text-white/70 px-4 py-1.5 rounded-full text-xs mb-8 tracking-[0.16em] uppercase">
