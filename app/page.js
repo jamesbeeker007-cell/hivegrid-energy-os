@@ -1,55 +1,62 @@
 'use client'
 import { useState, useEffect } from 'react'
 
-function IconConnected() {
+// Approved brand-board motifs, recreated as crisp SVGs in the verified website palette.
+function GateIcon({ children }) {
   return (
-    <svg viewBox="0 0 64 64" className="h-12 w-12" fill="none" aria-hidden="true">
-      <path d="M32 8 L54 21 L54 43 L32 56 L10 43 L10 21 Z" stroke="#5B4EFF" strokeWidth="2.4" />
-      <circle cx="32" cy="32" r="4" fill="#00FFFF" />
-      <circle cx="22" cy="38" r="3" fill="#5B4EFF" />
-      <circle cx="42" cy="38" r="3" fill="#C45A24" />
-      <path d="M32 32 L22 38 M32 32 L42 38" stroke="#00FFFF" strokeWidth="1.6" />
+    <svg viewBox="0 0 64 64" className="h-14 w-14" fill="none" aria-hidden="true" focusable="false">
+      <path d="M32 5 L55.4 18.5 V45.5 L32 59 L8.6 45.5 V18.5 Z" stroke="#00FFFF" strokeWidth="2.5" strokeLinejoin="round" />
+      {children}
     </svg>
   )
 }
+function IconConnected() {
+  return (
+    <GateIcon>
+      <path d="M32 24 V31 L22 38 M32 31 L42 38" stroke="#FFFF00" strokeWidth="2.8" strokeLinecap="round" />
+      <circle cx="32" cy="20" r="4" stroke="#FFFF00" strokeWidth="2.8" />
+      <circle cx="20" cy="40" r="4" stroke="#FFFF00" strokeWidth="2.8" />
+      <circle cx="44" cy="40" r="4" stroke="#FFFF00" strokeWidth="2.8" />
+    </GateIcon>
+  )
+}
+// Sixth companion motif: a home for the Site gate, following the same hexagon/line system.
 function IconSite() {
   return (
-    <svg viewBox="0 0 64 64" className="h-12 w-12" fill="none" aria-hidden="true">
-      <path d="M32 8 L54 21 L54 43 L32 56 L10 43 L10 21 Z" stroke="#5B4EFF" strokeWidth="2.4" />
-      <path d="M22 38 L32 22 L42 38 V44 H22 Z" stroke="#00FFFF" strokeWidth="2" />
-    </svg>
+    <GateIcon>
+      <path d="M18 31 L32 19 L46 31 M22 28 V45 H42 V28 M29 45 V35 H35 V45" stroke="#FFFF00" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" />
+    </GateIcon>
   )
 }
 function IconPrecision() {
   return (
-    <svg viewBox="0 0 64 64" className="h-12 w-12" fill="none" aria-hidden="true">
-      <path d="M36 12 L22 34 H32 L26 52 L46 28 H34 Z" stroke="#00FFFF" strokeWidth="2.6" strokeLinejoin="round" />
-    </svg>
+    <GateIcon>
+      <circle cx="32" cy="32" r="11" stroke="#FFFF00" strokeWidth="3.5" />
+      <circle cx="32" cy="32" r="4" fill="#00FFFF" />
+    </GateIcon>
   )
 }
 function IconSafety() {
   return (
-    <svg viewBox="0 0 64 64" className="h-12 w-12" fill="none" aria-hidden="true">
-      <path d="M32 8 L54 21 L54 43 L32 56 L10 43 L10 21 Z" stroke="#00FFFF" strokeWidth="2.4" />
-      <circle cx="32" cy="32" r="7" stroke="#5B4EFF" strokeWidth="2" />
-      <circle cx="32" cy="32" r="3" fill="#C45A24" />
-    </svg>
+    <GateIcon>
+      <path d="M21 32 L29 40 L44 24" stroke="#00FFFF" strokeWidth="4.5" strokeLinecap="square" strokeLinejoin="miter" />
+    </GateIcon>
   )
 }
 function IconReliable() {
   return (
-    <svg viewBox="0 0 64 64" className="h-12 w-12" fill="none" aria-hidden="true">
-      <circle cx="32" cy="32" r="22" stroke="#5B4EFF" strokeWidth="2.4" />
-      <path d="M36 16 L24 34 H33 L27 48 L42 30 H33 Z" fill="#C45A24" />
-    </svg>
+    <GateIcon>
+      <path d="M36 14 L23 34 H32 L28 50 L43 29 H33 Z" fill="#FFFF00" />
+    </GateIcon>
   )
 }
 function IconPerformance() {
   return (
-    <svg viewBox="0 0 64 64" className="h-12 w-12" fill="none" aria-hidden="true">
-      <path d="M32 8 L54 21 L54 43 L32 56 L10 43 L10 21 Z" stroke="#5B4EFF" strokeWidth="2.4" />
-      <path d="M22 40 V32 M32 40 V24 M42 40 V28" stroke="#C45A24" strokeWidth="3.2" strokeLinecap="round" />
-    </svg>
+    <GateIcon>
+      <path d="M21 44 V33" stroke="#00FFFF" strokeWidth="6" />
+      <path d="M32 44 V26" stroke="#00D4A4" strokeWidth="6" />
+      <path d="M43 44 V19" stroke="#FFFF00" strokeWidth="6" />
+    </GateIcon>
   )
 }
 
