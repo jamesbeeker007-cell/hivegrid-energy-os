@@ -1,0 +1,6 @@
+PASS homepage anchors, email fallback, images and width 320
+PASS homepage anchors, email fallback, images and width 375
+PASS homepage anchors, email fallback, images and width 768
+PASS homepage anchors, email fallback, images and width 1440
+PASS noindex metadata /portal
+PASS noindex metadata /energy-calculator

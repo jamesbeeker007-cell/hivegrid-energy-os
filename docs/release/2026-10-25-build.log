@@ -1,0 +1,32 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> hivegrid-energy-os@1.0.0 build
+> next build
+
+   ▲ Next.js 15.5.28
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 11.4s
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/6) ...
+   Generating static pages (1/6) 
+   Generating static pages (2/6) 
+   Generating static pages (4/6) 
+ ✓ Generating static pages (6/6)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                 Size  First Load JS
+┌ ○ /                                    5.25 kB         108 kB
+├ ○ /_not-found                            992 B         104 kB
+├ ○ /energy-calculator                     130 B         103 kB
+└ ○ /portal                               2.7 kB         105 kB
++ First Load JS shared by all             103 kB
+  ├ chunks/255-b1e2483a7e02feee.js       46.6 kB
+  ├ chunks/4bd1b696-c023c6e3521b1417.js  54.2 kB
+  └ other shared chunks (total)           1.9 kB
+
+
+○  (Static)  prerendered as static content
+

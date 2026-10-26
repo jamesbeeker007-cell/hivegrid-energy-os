@@ -1,0 +1,28 @@
+PASS Homepage, approved footer, brand color and logo
+PASS Keyboard skip link reaches main content
+PASS Mobile navigation opens, Escape closes and restores focus; no document overflow
+PASS Reduced-motion preference disables logo animation
+PASS Contact accepted response renders success (intercepted; no email sent)
+PASS Contact provider rejection retains form and announces error
+PASS Portal rejects an incorrect demo gate code
+PASS Investor demo gate, session, role views, sample reset and lock
+PASS Administrative work gate, session, role views, sample reset and lock
+PASS Archived calculator route and image remain available
+PASS No browser JavaScript errors across tested routes
+{
+  "passed": 11,
+  "results": [
+    "Homepage, approved footer, brand color and logo",
+    "Keyboard skip link reaches main content",
+    "Mobile navigation opens, Escape closes and restores focus; no document overflow",
+    "Reduced-motion preference disables logo animation",
+    "Contact accepted response renders success (intercepted; no email sent)",
+    "Contact provider rejection retains form and announces error",
+    "Portal rejects an incorrect demo gate code",
+    "Investor demo gate, session, role views, sample reset and lock",
+    "Administrative work gate, session, role views, sample reset and lock",
+    "Archived calculator route and image remain available",
+    "No browser JavaScript errors across tested routes"
+  ],
+  "emailDeliveryTested": false
+}

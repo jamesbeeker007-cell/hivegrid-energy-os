@@ -1,55 +1,62 @@
 'use client'
 import { useState, useEffect } from 'react'
 
-function IconConnected() {
+// Approved brand-board motifs, recreated as crisp SVGs in the verified website palette.
+function GateIcon({ children }) {
   return (
-    <svg viewBox="0 0 64 64" className="h-12 w-12" fill="none" aria-hidden="true">
-      <path d="M32 8 L54 21 L54 43 L32 56 L10 43 L10 21 Z" stroke="#5B4EFF" strokeWidth="2.4" />
-      <circle cx="32" cy="32" r="4" fill="#00FFFF" />
-      <circle cx="22" cy="38" r="3" fill="#5B4EFF" />
-      <circle cx="42" cy="38" r="3" fill="#C45A24" />
-      <path d="M32 32 L22 38 M32 32 L42 38" stroke="#00FFFF" strokeWidth="1.6" />
+    <svg viewBox="0 0 64 64" className="h-14 w-14" fill="none" aria-hidden="true" focusable="false">
+      <path d="M32 5 L55.4 18.5 V45.5 L32 59 L8.6 45.5 V18.5 Z" stroke="#00FFFF" strokeWidth="2.5" strokeLinejoin="round" />
+      {children}
     </svg>
   )
 }
+function IconConnected() {
+  return (
+    <GateIcon>
+      <path d="M32 24 V31 L22 38 M32 31 L42 38" stroke="#FFFF00" strokeWidth="2.8" strokeLinecap="round" />
+      <circle cx="32" cy="20" r="4" stroke="#FFFF00" strokeWidth="2.8" />
+      <circle cx="20" cy="40" r="4" stroke="#FFFF00" strokeWidth="2.8" />
+      <circle cx="44" cy="40" r="4" stroke="#FFFF00" strokeWidth="2.8" />
+    </GateIcon>
+  )
+}
+// Sixth companion motif: a home for the Site gate, following the same hexagon/line system.
 function IconSite() {
   return (
-    <svg viewBox="0 0 64 64" className="h-12 w-12" fill="none" aria-hidden="true">
-      <path d="M32 8 L54 21 L54 43 L32 56 L10 43 L10 21 Z" stroke="#5B4EFF" strokeWidth="2.4" />
-      <path d="M22 38 L32 22 L42 38 V44 H22 Z" stroke="#00FFFF" strokeWidth="2" />
-    </svg>
+    <GateIcon>
+      <path d="M18 31 L32 19 L46 31 M22 28 V45 H42 V28 M29 45 V35 H35 V45" stroke="#FFFF00" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" />
+    </GateIcon>
   )
 }
 function IconPrecision() {
   return (
-    <svg viewBox="0 0 64 64" className="h-12 w-12" fill="none" aria-hidden="true">
-      <path d="M36 12 L22 34 H32 L26 52 L46 28 H34 Z" stroke="#00FFFF" strokeWidth="2.6" strokeLinejoin="round" />
-    </svg>
+    <GateIcon>
+      <circle cx="32" cy="32" r="11" stroke="#FFFF00" strokeWidth="3.5" />
+      <circle cx="32" cy="32" r="4" fill="#00FFFF" />
+    </GateIcon>
   )
 }
 function IconSafety() {
   return (
-    <svg viewBox="0 0 64 64" className="h-12 w-12" fill="none" aria-hidden="true">
-      <path d="M32 8 L54 21 L54 43 L32 56 L10 43 L10 21 Z" stroke="#00FFFF" strokeWidth="2.4" />
-      <circle cx="32" cy="32" r="7" stroke="#5B4EFF" strokeWidth="2" />
-      <circle cx="32" cy="32" r="3" fill="#C45A24" />
-    </svg>
+    <GateIcon>
+      <path d="M21 32 L29 40 L44 24" stroke="#00FFFF" strokeWidth="4.5" strokeLinecap="square" strokeLinejoin="miter" />
+    </GateIcon>
   )
 }
 function IconReliable() {
   return (
-    <svg viewBox="0 0 64 64" className="h-12 w-12" fill="none" aria-hidden="true">
-      <circle cx="32" cy="32" r="22" stroke="#5B4EFF" strokeWidth="2.4" />
-      <path d="M36 16 L24 34 H33 L27 48 L42 30 H33 Z" fill="#C45A24" />
-    </svg>
+    <GateIcon>
+      <path d="M36 14 L23 34 H32 L28 50 L43 29 H33 Z" fill="#FFFF00" />
+    </GateIcon>
   )
 }
 function IconPerformance() {
   return (
-    <svg viewBox="0 0 64 64" className="h-12 w-12" fill="none" aria-hidden="true">
-      <path d="M32 8 L54 21 L54 43 L32 56 L10 43 L10 21 Z" stroke="#5B4EFF" strokeWidth="2.4" />
-      <path d="M22 40 V32 M32 40 V24 M42 40 V28" stroke="#C45A24" strokeWidth="3.2" strokeLinecap="round" />
-    </svg>
+    <GateIcon>
+      <path d="M21 44 V33" stroke="#00FFFF" strokeWidth="6" />
+      <path d="M32 44 V26" stroke="#00D4A4" strokeWidth="6" />
+      <path d="M43 44 V19" stroke="#FFFF00" strokeWidth="6" />
+    </GateIcon>
   )
 }
 
@@ -76,6 +83,8 @@ const DISCIPLINES = [
 
 export default function HomePage() {
   const [email, setEmail] = useState('')
+  const [name, setName] = useState('')
+  const [message, setMessage] = useState('')
   const [submitted, setSubmitted] = useState(false)
   const [sending, setSending] = useState(false)
   const [sendError, setSendError] = useState('')
@@ -84,7 +93,7 @@ export default function HomePage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    if (!email.trim()) return
+    if (sending || submitted || !email.trim() || !message.trim()) return
     setSending(true)
     setSendError('')
     try {
@@ -92,12 +101,17 @@ export default function HomePage() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
-          email,
+          name: name.trim(),
+          email: email.trim(),
+          message: message.trim(),
           _subject: 'HiveGrid Energy website contact',
           source: 'hivegrid-energy-os landing page',
         }),
       })
-      if (!res.ok) throw new Error('send failed')
+      const result = await res.json()
+      if (!res.ok || (result.success !== true && result.success !== 'true')) {
+        throw new Error('send failed')
+      }
       setSubmitted(true)
     } catch (err) {
       setSendError('Could not send just now. Email sandram@hivegridenergy.com directly.')
@@ -119,7 +133,7 @@ export default function HomePage() {
       <nav className="w-full bg-[#07002E]/85 backdrop-blur-md border-b border-white/10 sticky top-0 z-50 px-4 py-3">
         <div className="max-w-6xl mx-auto flex justify-between items-center gap-3">
           <a href="/" className="flex items-center gap-3 min-w-0">
-            <img src="/images/logo-icon.svg" alt="HiveGrid Energy" className="h-14 w-14 sm:h-16 sm:w-16 shrink-0 hive-mark-live" />
+            <img src="/images/hivegrid-hexagon-approved.svg" alt="HiveGrid Energy" className="h-14 w-14 sm:h-16 sm:w-16 shrink-0 hive-mark-live" />
             <div className="leading-none">
               <div className="text-2xl sm:text-3xl font-bold tracking-tight text-white">HiveGrid</div>
               <div className="text-[11px] sm:text-xs text-hive-cyan tracking-[0.32em] font-semibold mt-1">ENERGY</div>
@@ -132,12 +146,11 @@ export default function HomePage() {
             <a href="#contact" className="hover:text-hive-gold">Contact</a>
             <a href="/portal" className="hover:text-hive-cyan">Portal</a>
           </div>
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-hive-cyan text-3xl leading-none" aria-label="Toggle menu">
+          <button id="mobile-menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-hive-cyan text-3xl leading-none" aria-label={isMenuOpen ? 'Close menu' : 'Open menu'} onKeyDown={(e) => { if (e.key === 'Escape') closeMenu() }} aria-expanded={isMenuOpen} aria-controls="hive-mobile-menu">
             {isMenuOpen ? '✕' : '☰'}
           </button>
         </div>
-        {isMenuOpen && (
-          <div className="md:hidden mt-3">
+        <div id="hive-mobile-menu" hidden={!isMenuOpen} onKeyDown={(e) => { if (e.key === 'Escape') { closeMenu(); document.getElementById('mobile-menu-toggle')?.focus() } }} className="md:hidden mt-3">
             <div className="flex flex-col gap-3 text-sm hive-card border border-white/10 rounded-2xl p-4">
               <a href="#about" onClick={closeMenu} className="text-hive-cyan">About</a>
               <a href="#how-it-works" onClick={closeMenu} className="text-hive-gold">How It Works</a>
@@ -146,12 +159,11 @@ export default function HomePage() {
               <a href="/portal" onClick={closeMenu} className="text-hive-cyan">Portal</a>
             </div>
           </div>
-        )}
       </nav>
 
-      <section className="relative px-5 pt-20 pb-16 md:pt-28 md:pb-20">
+      <section id="main-content" tabIndex={-1} className="relative px-5 pt-20 pb-16 md:pt-28 md:pb-20">
         <div className="hive-watermark">
-          <img src="/images/logo-icon.svg" alt="" />
+          <img src="/images/hivegrid-hexagon-approved.svg" alt="" />
         </div>
         <div className="relative max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 border border-white/15 text-white/70 px-4 py-1.5 rounded-full text-xs mb-8 tracking-[0.16em] uppercase">
@@ -294,44 +306,43 @@ export default function HomePage() {
           <h2 className="text-3xl md:text-5xl font-bold text-hive-cyan">One crew. One home. One standard.</h2>
           <p className="italic text-white mt-4">{MOTTO}</p>
           <div className="h-px w-16 bg-hive-gold mx-auto mt-4 mb-5" />
-          <p className="text-white/70 mb-2">Have contracted residential battery installations that need an execution path?</p>
+          <p className="text-white/70 mb-2">We’d love to hear from you. Have a question or a project in mind? Tell us a little about it below, or email us directly.</p>
           <p className="text-white/80 mb-8">Fort Worth, Texas<br /><span className="text-white/60">hivegridenergy.com</span></p>
-          <form onSubmit={handleSubmit} className="flex flex-col gap-3 text-left">
+          <p className="mb-6 text-white/80">Or email <a href="mailto:sandram@hivegridenergy.com" className="text-hive-cyan underline underline-offset-4">sandram@hivegridenergy.com</a> directly.</p>
+          <form aria-busy={sending} onSubmit={handleSubmit} className="flex flex-col gap-3 text-left">
             {!submitted ? (
               <>
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Email"
-                    required
-                    className="flex-1 bg-black/30 border border-white/15 rounded-2xl px-5 py-3.5 text-white placeholder:text-white/40 focus:outline-none focus:border-hive-gold"
-                  />
-                  <button type="submit" disabled={sending} className="bg-hive-gold hover:brightness-110 text-hive-ink font-semibold px-8 py-3.5 rounded-2xl disabled:opacity-60">
-                    {sending ? 'Sending…' : 'Contact us'}
-                  </button>
-                </div>
-                {sendError && <p className="text-sm text-hive-gold">{sendError}</p>}
+                <label htmlFor="contact-name" className="text-sm text-white">Name (optional)</label>
+                <input id="contact-name" name="name" autoComplete="name" value={name} onChange={(e) => setName(e.target.value)} maxLength={150} className="w-full bg-black/30 border border-white/15 rounded-2xl px-5 py-3.5 text-white focus:border-hive-gold" />
+                <label htmlFor="contact-email" className="text-sm text-white">Email address</label>
+                <input id="contact-email" name="email" autoComplete="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required maxLength={254} aria-describedby={sendError ? 'contact-error' : undefined} className="w-full bg-black/30 border border-white/15 rounded-2xl px-5 py-3.5 text-white focus:border-hive-gold" />
+                <label htmlFor="contact-message" className="text-sm text-white">How can we help?</label>
+                <textarea id="contact-message" name="message" value={message} onChange={(e) => setMessage(e.target.value)} required maxLength={5000} rows={4} aria-describedby="contact-message-help" className="w-full bg-black/30 border border-white/15 rounded-2xl px-5 py-3.5 text-white focus:border-hive-gold" />
+                <p id="contact-message-help" className="text-sm text-white/70">Share your question or a brief overview of your project.</p>
+                <button type="submit" disabled={sending} className="bg-hive-gold hover:brightness-110 text-hive-ink font-semibold px-8 py-3.5 rounded-2xl disabled:opacity-60">
+                  {sending ? 'Sending…' : 'Send message'}
+                </button>
+                <p id="contact-error" role="alert" className="text-sm text-hive-gold">{sendError}</p>
               </>
             ) : (
               <div className="py-6 text-center text-hive-cyan font-medium">Thank you. We will be in touch shortly.</div>
             )}
           </form>
+          <p role="status" aria-live="polite" className="sr-only">{submitted ? 'Your contact request was accepted.' : sending ? 'Sending your contact request.' : ''}</p>
         </div>
       </section>
 
       <footer className="border-t border-white/10 py-10 text-center text-sm text-white/50 px-5">
-        <div className="italic text-white mb-2">{MOTTO}</div>
-        <div>Fort Worth, Texas · hivegridenergy.com</div>
-        <div className="mt-2">© 2026 HiveGrid Energy, LLC · Wyoming LLC · Texas operations</div>
+        <div>© 2026 HiveGrid Energy LLC. All rights reserved.</div>
+        <div className="italic text-white mt-2">{MOTTO}</div>
       </footer>
 
       {showBackToTop && (
-        <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-hive-gold text-hive-ink" aria-label="Back to top">
+        <button onClick={() => window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' })} className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-hive-gold text-hive-ink" aria-label="Back to top">
           ↑
         </button>
       )}
     </main>
   )
 }
+
